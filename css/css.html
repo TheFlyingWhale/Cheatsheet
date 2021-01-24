@@ -68,21 +68,25 @@
     <h4>Reset box-model</h4>
     <p>By default a box with the width of 200px and border with 2px width will render a box of 204px</p>
     <p>To avoid this we can reset the entire box model and specify a new one: <code>border-box</code></p>
+    <h5>This code results in the width being 322px (default)</h5>
     <pre>
         <code>
+            * {
+                box-sizing: content-box; (default value)
+            }
+
             h1 {
                 border: 1px solid black;
                 height: 200px;
                 width: 300px;
                 padding: 10px;
                 }
-
-            <span class="comment">//Width: 322</span>
         </code>
     </pre>
+    <h5>This code results in the width being 300px</h5>
     <pre>
         <code>
-            *{
+            * {
                 box-sizing: border-box;
             }
 
@@ -92,8 +96,6 @@
                 width: 300px;
                 padding: 10px;
                 }
-                
-            <span class="comment">//Width: 300</span>
         </code>
     </pre>
 </section>
@@ -132,4 +134,111 @@
             padding: all-sides;
         </code>
     </pre>
+</section>
+
+<section id="flow">
+    <h3>Flow</h3>
+    <p>Flow refers to how elements are being rendered. By default its left to right, top to bottom, in the same order as they exist in the document.</p>
+
+    <section id="position">
+        <h4>Position</h4>
+        <p>There are seven types of position an element can have:</p>
+        <ul>
+            <li><code>static (default)</code></li>
+            <li><code>relative</code></li>
+            <li><code>absolute</code></li>
+            <li><code>fixed</code></li>
+            <li><code>sticky</code></li>
+            <li><code>initial</code></li>
+            <li><code>inherit</code></li>
+        </ul>
+        <h5>Static</h5>
+        <p>Default render.</p>
+        <h5>Relative</h5>
+        <p>Allows you to position the element relative to its default position.</p>
+        <p>Combine relative with <code>top</code> <code>bottom</code> <code>left</code> and <code>right</code> to move the element to an desired location.</p>
+        <h5>Absolute</h5>
+        <p>Makes all other elements ignore given element and act like it's not present on the page.</p>
+        <h5>Fixed</h5>
+        <p>Works like absolute in the sence that other elements will ignore it, but the element will be fixed to a position in the browser.</p>
+        <p>You can scroll and the element will stay on the same location.</p>
+    </section>
+
+    <section id="display">
+        <h4>Display</h4>
+        <p>Display dictates if an element can share horizontal space with other elements.</p>
+        <p>The list of available display properties include:</p>
+        <ul>
+            <li><code>inline</code></li>
+            <li><code>block</code></li>
+            <li><code>inline-block</code></li>
+        </ul>
+        <h5>Inline</h5>
+        <p>Inline elments have a box wraped tightly around its content, only taking up the space necessary to display their content and not requiring a new line after the each element.</p>
+        <p>Heigth and width can not be set with CSS on <code>inline</code> elements.</p>
+        <p>You can use <code>inline</code> on elements thats not <code>inline</code> by default to make them appear on the same line.</p>
+
+        <h4>Block</h4>
+        <p>Block elements are not displayed on the same line as other elements.</p>
+        <p>By default its <code>width</code> will fill the entire screen, but <code>width</code> can be set.</p>
+        <p>Unless otherwise specified, they are the <code>height</code> necessary to accommodate their content</p>
+
+        <h4>Inline-Block</h4>
+        <p>Inline-block display combines features of both inline and block elements.</p>
+        <p>Inline-block elements can appear next to each other and we can specify their dimensions using the
+            <code>width</code> and <code>height</code> properties.
+        </p>
+    </section>
+
+    <section id="float">
+        <h4>Float</h4>
+        <p>If you’re simply interested in moving an element as far left or as far right as possible on the page, you can use the <code>float</code> property.</p>
+        <ul>
+            <li>left</li>
+            <li>right</li>
+        </ul>
+
+        <h5>Left</h5>
+        <p>Move, or float, elements as far left as possible</p>
+
+        <h5>Right</h5>
+        <p>move, or float, elements as far right as possible</p>
+
+        <h4>Clear</h4>
+        <p>The <code>clear</code> property specifies how elements should behave when they bump into each other on the page</p>
+        <ul>
+            <li>left</li>
+            <li>right</li>
+            <li>both</li>
+            <li>none</li>
+        </ul>
+        <h5>Left</h5>
+        <p>The left side of the element will not touch any other element within the same containing element.</p>
+        <h5>Right</h5>
+        <p>The right side of the element will not touch any other element within the same containing element.</p>
+        <h5>Both</h5>
+        <p>Neither side of the element will touch any other element within the same containing element.</p>
+        <h5>none</h5>
+        <p>The element can touch either side.</p>
+    </section>
+
+
+    <aside class="usefulLinks">
+        <h4>Useful Links:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://www.w3schools.com/cssref/pr_class_position.asp">w3schools Position</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.w3schools.com/cssref/pr_class_display.asp">w3schools Display</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.w3schools.com/cssref/pr_class_float.asp">w3schools Float</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">MDN Inline
+                    elements</a>
+            </li>
+        </ul>
+    </aside>
 </section>
