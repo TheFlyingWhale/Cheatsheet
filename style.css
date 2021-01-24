@@ -10,6 +10,7 @@ header h1 {
 nav {
     display: inline-block;
     position: fixed;
+    height: 100vh;
     top: 0px;
     overflow-y: scroll;
     transform: translateX(-25px);
