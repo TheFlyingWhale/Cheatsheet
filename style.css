@@ -2,6 +2,26 @@
     box-sizing: border-box;
 }
 
+header h1{
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+nav{
+    display: inline-block;
+    width: 50%;
+    position: fixed;
+    top: 0px;
+    overflow-y: scroll;
+    transform: translateX(-25px);
+}
+
+main{
+    display: inline-block;
+    width: 80%;
+    float: right;
+}
+
 body {
     max-width: 1440px;
     background-color: rgb(21, 21, 21);
@@ -94,32 +114,27 @@ h6 {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 500%;
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 250%;
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 200%;
 }
 
 h4 {
-    font-size: 1.5em;
+    font-size: 150%;
 }
 
 h5 {
-    font-size: 1.25em;
+    font-size: 125%;
 }
 
 h6 {
-    font-size: 1em;
-}
-
-nav {
-    position: fixed;
-    left: 50px;
+    font-size: 100%;
 }
 
 nav ol {
@@ -177,22 +192,4 @@ ol ol {
     display: flex;
     justify-content: center;
     border-radius: 15px;
-}
-
-@media only screen and (max-width: 1440px) {
-    nav {
-        position: fixed;
-    }
-    body {
-        padding: 0px 0px;
-    }
-}
-
-@media only screen and (max-width: 2250px) {
-    nav {
-        position: static;
-    }
-    body {
-        padding: 0px 25px;
-    }
 }
