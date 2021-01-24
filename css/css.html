@@ -1,0 +1,37 @@
+<h2>CSS</h2>
+<section id="whatiscss">
+    <h3>- What is CSS?</h3>
+    <p>CSS is what allows us to style the structure of HTML</p>
+</section>
+
+<section id="fonts">
+    <h3>- Fonts</h3>
+    <p>Fonts(typefaces) are used to style text.</p>
+
+    <h4>Ways to import fonts to a project</h4>
+    <p>There are two ways of importing fonts into a project.</p>
+
+    <h5>Linking fonts in head</h5>
+    <p>You can include fonts by linking them from an external sources in the head element</p>
+    <pre>
+        <code>
+            &lthead&gt
+                &ltlink href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet"&gt
+            &lthead&gt
+        </code>
+    </pre>
+
+    <h5>Including local fonts</h5>
+    <p>In the stylesheet you can set font styles and link them to local files</p>
+    <pre>
+        <code>
+            @font-face{
+                font-family: Heebo;
+                font-style: normal;
+                font-weight: 400;
+                src: url(folder/font.ttf) format("truetype");
+            }
+        </code>
+    </pre>
+
+</section>

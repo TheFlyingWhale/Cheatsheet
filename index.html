@@ -1,25 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("head").load('components/head.html');
-    });
-</script>
-<head></head>
+
+<head>
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheatsheet</title>
+    <!--link rel="icon" href="" type="image/png"-->
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- SCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
 
 <body>
-
-    <head>
+    <header>
         <h1>Cheatsheet</h1>
         <nav>
             <ol>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Javascript</li>
+                <li><a href="#html">Html</a>
+                    <ol>
+                        <li>
+                            <a href="#whatIsHtml">What is HTML</a>
+                        </li>
+                        <li>
+                            <a href="#semantics">Semantics</a>
+                        </li>
+                        <li>
+                            <a href="#lists">Lists</a>
+                        </li>
+                    </ol>
+                </li>
+                <li><a href="#css">CSS</a>
+                    <ol>
+                        <li>
+                            <a href="#whatiscss">What is CSS</a>
+                        </li>
+                        <li>
+                            <a href="#fonts">Fonts</a>
+                        </li>
+                    </ol>
+                </li>
+                <li><a href="#javascript">Javascript</a>
+                    <ol>
+                        <li>
+                            <a href="#whatisjavascript">What is Javascript</a>
+                        </li>
+                        <li>
+                            <a href="#functions">Functions</a>
+                        </li>
+                    </ol>
+                </li>
             </ol>
         </nav>
-    </head>
+    </header>
+    <main>
+        <article id="html"></article>
+        <article id="css"></article>
+        <article id="javascript"></article>
+    </main>
 </body>
+<script src="jquery/loader.js"></script>
 
 </html>
