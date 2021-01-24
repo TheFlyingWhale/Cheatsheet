@@ -16,6 +16,10 @@ nav{
     transform: translateX(-25px);
 }
 
+nav:-webkit-scrollbar {
+    display: none;
+  }
+
 main{
     display: inline-block;
     width: 80%;
