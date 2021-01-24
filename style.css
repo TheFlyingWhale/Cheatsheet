@@ -9,7 +9,6 @@ header h1{
 
 nav{
     display: inline-block;
-    width: 50%;
     position: fixed;
     top: 0px;
     overflow-y: scroll;
@@ -21,7 +20,6 @@ nav:-webkit-scrollbar {
   }
 
 main{
-    display: inline-block;
     width: 80%;
     float: right;
 }
@@ -37,9 +35,9 @@ body {
 
 article {
     border-radius: 25px;
-    background-color: rgb(30, 30, 30);
-    padding: 50px 50px 50px 50px;
-    margin: 50px 0px 50px 0px;
+    /*background-color: rgb(30, 30, 30);*/
+    /*padding: 50px 50px 50px 50px;*/
+    margin: 25px 0px 200px 0px;
 }
 
 .usefulLinks {
@@ -49,7 +47,6 @@ article {
     border-radius: 25px;
     border-color: rgb(35, 40, 45);
     padding: 5px 25px 15px 25px;
-    margin-top: 25px;
 }
 
 
@@ -95,7 +92,7 @@ section {
 }
 
 section p {
-    margin: 5px 0px 5px 15px;
+    margin: 5px 0px 5px 0px;
 }
 
 a {
@@ -127,6 +124,7 @@ h2 {
 
 h3 {
     font-size: 200%;
+    margin-top: 15px;
 }
 
 h4 {
