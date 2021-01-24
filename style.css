@@ -1,0 +1,12 @@
+body{
+    width: 1440px;
+    margin: 0 auto 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6, p, li{
+    font-family: Heebo;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
