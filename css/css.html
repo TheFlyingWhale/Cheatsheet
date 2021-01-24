@@ -1,11 +1,11 @@
 <h2>CSS</h2>
 <section id="whatiscss">
-    <h3>- What is CSS?</h3>
+    <h3>What is CSS?</h3>
     <p>CSS is what allows us to style the structure of HTML</p>
 </section>
 
 <section id="fonts">
-    <h3>- Fonts</h3>
+    <h3>Fonts</h3>
     <p>Fonts(typefaces) are used to style text.</p>
 
     <h4>Ways to import fonts to a project</h4>
@@ -33,5 +33,71 @@
             }
         </code>
     </pre>
+</section>
 
+<section id="boxModel">
+    <h3>Box Model</h3>
+    <p>HTML elements are rendered as a box. With CSS we can manipulate how this box behaves on a site</p>
+    <p>The Box Model consists of these elements:</p>
+    <div>
+        <div>
+            <ul>
+                <li>Content(Height & Width)</li>
+                <li>Padding(Space withing the box)</li>
+                <li>Border(Dividing the outside from the inside)</li>
+                <li>Margin(Space outside the box)</li>
+            </ul>
+        </div>
+        <div id="BM-boxModel">
+            <div id="BM-margin">
+                <p>Margin</p>
+                <div id="BM-border">
+                    <p>Border</p>
+                    <div id="BM-padding">
+                        <p>Padding</p>
+                        <div id="BM-content">
+                            <p>Content</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="margin">
+    <h3>Margin</h3>
+    <p>Shorthands</p>
+    <pre>
+        <code>
+            margin: Top Right Bottom Left;
+            margin: Top X-axis(Right & Left) Bottom;
+            margin: Y-axis X-axis;
+            margin: all-sides;
+        </code>
+    </pre>
+</section>
+
+<section id="border">
+    <h3>Border</h3>
+    <p>Shorthands</p>
+    <pre>
+        <code>
+            border: width style color;
+        </code>
+    </pre>
+</section>
+
+<section id="padding">
+    <h3>Padding</h3>
+    <p>Shorthands</p>
+    <pre>
+        <code>
+            padding: Top Right Bottom Left;
+            padding: Top X-axis Bottom;
+            padding: Y-axis X-axis;
+            padding: all-sides;
+        </code>
+    </pre>
 </section>
