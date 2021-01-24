@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     width: 1440px;
     background-color: rgb(21, 21, 21);
@@ -34,6 +38,22 @@ pre {
     padding: 0px 0px 0px 0px;
     display: flex;
     align-items: center;
+    overflow: hidden;
+}
+
+pre code {
+    background-color: rgb(30, 35, 30);
+}
+
+code {
+    background-color: rgb(40, 45, 40);
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px;
+}
+
+code .comment {
+    color: rgb(100, 100, 100);
 }
 
 

@@ -64,6 +64,38 @@
             </div>
         </div>
     </div>
+
+    <h4>Reset box-model</h4>
+    <p>By default a box with the width of 200px and border with 2px width will render a box of 204px</p>
+    <p>To avoid this we can reset the entire box model and specify a new one: <code>border-box</code></p>
+    <pre>
+        <code>
+            h1 {
+                border: 1px solid black;
+                height: 200px;
+                width: 300px;
+                padding: 10px;
+                }
+
+            <span class="comment">//Width: 322</span>
+        </code>
+    </pre>
+    <pre>
+        <code>
+            *{
+                box-sizing: border-box;
+            }
+
+            h1 {
+                border: 1px solid black;
+                height: 200px;
+                width: 300px;
+                padding: 10px;
+                }
+                
+            <span class="comment">//Width: 300</span>
+        </code>
+    </pre>
 </section>
 
 <section id="margin">
