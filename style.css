@@ -11,7 +11,7 @@ nav {
     display: inline-block;
     position: fixed;
     height: 100vh;
-    top: 0px;
+    top: 25px;
     overflow-y: scroll;
     transform: translateX(-25px);
 }
@@ -33,7 +33,7 @@ body {
     max-width: 1440px;
     background-color: rgb(21, 21, 21);
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 25px 50px;
     font-family: Heebo;
     color: rgb(255, 255, 255);
 }
