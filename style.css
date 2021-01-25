@@ -51,7 +51,11 @@ article {
     border-width: 2px;
     border-radius: 25px;
     border-color: rgb(35, 40, 45);
-    padding: 5px 25px 15px 25px;
+    padding: 40px 25px 15px 25px;
+}
+
+.usefulLinks h4 {
+    margin: 0px;
 }
 
 
@@ -103,7 +107,8 @@ section section {
 }
 
 section p {
-    margin: 5px 0px 5px 0px;
+    margin: 5px 0px; 
+    line-height: 1.5;
 }
 
 a {
@@ -141,11 +146,12 @@ h3 {
 
 h4 {
     font-size: 175%;
-    margin: 25px 0px 20px 0px;
+    margin: 40px 0px 15px 0px;
 }
 
 h5 {
     font-size: 125%;
+    margin: 40px 0px 15px 0px;
 }
 
 h6 {
