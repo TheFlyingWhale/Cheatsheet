@@ -13,6 +13,11 @@ $(document).ready(function() {
     $("#javascript").load('javascript/javascript.html');
 });
 
+//Loades the Design Article
+$(document).ready(function() {
+    $('#design').load('design/design.html');
+});
+
 //Loades the Resource Article
 $(document).ready(function() {
     $('#resources').load('resources/resources.html');
