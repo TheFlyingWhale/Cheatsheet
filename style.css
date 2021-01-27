@@ -52,6 +52,7 @@ article {
     border-radius: 25px;
     border-color: rgb(35, 40, 45);
     padding: 40px 25px 15px 25px;
+    margin-top: 25px;
 }
 
 .usefulLinks h4 {
@@ -104,6 +105,7 @@ section {
 section section {
     border-color: rgb(40, 40, 40);
     background-color: rgb(30, 30, 30);
+    margin: 25px 0px 0px 0px;
 }
 
 section p {
