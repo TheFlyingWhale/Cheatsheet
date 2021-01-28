@@ -295,6 +295,8 @@
             <li><code>inline</code></li>
             <li><code>block</code></li>
             <li><code>inline-block</code></li>
+            <li><a href="#flex"><code>inline-flex</code></a></li>
+            <li><a href="#flex"><code>flex</code></a></li>
         </ul>
         <h5>Inline</h5>
         <p>Inline elments have a box wraped tightly around its content, only taking up the space necessary to display their content and not requiring a new line after the each element.</p>
@@ -343,6 +345,166 @@
         <p>Neither side of the element will touch any other element within the same containing element.</p>
         <h5>none</h5>
         <p>The element can touch either side.</p>
+    </section>
+
+    <section id="flex">
+        <h4>Flexbox</h4>
+        <p>Flexbox is used to position elements on a page. While it's not ment to lay out an entire page, it is useful for positioning elements, whether individually or in groups.</p>
+        <p>There are two main components in flex layout: flex containers and flex items.</p>
+        <pre>
+            <code>
+    div .container {
+        display: flex;
+    }
+            </code>
+        </pre>
+        <p>In the example above, all divs with the class container are flex <code>containers</code>. If they have children, the children are flex items. A div with the declaration <code>display: flex;</code> will remain block level — no other elements will appear on the same line as it.</p>
+        <h5>Container: Flex vs Inline-flex</h5>
+        <p>To designate an element as a flex container, set the element’s <code>display</code> property to <code>flex</code> or <code>inline-flex</code>. Once an item is a flex container, there are several properties we can use to specify how its children behave.</p>
+        <p>Giving a container the <code>display: flex;</code> property makes it an block element. If we want it to behave as an inline element we give it the <code>display: inline-flex;</code> property.</p>
+        
+        <p>Some flex properties are:</p>
+        <ul>
+            <li><code>justify-content</code></li>
+            <li><code>align-items</code></li>
+            <li><code>flex-grow</code></li>
+            <li><code>flex-shrink</code></li>
+            <li><code>flex-basis</code></li>
+            <li><code>flex</code></li>
+            <li><code>flex-wrap</code></li>
+            <li><code>align-content</code></li>
+            <li><code>flex-direction</code></li>
+            <li><code>flex-flow</code></li>
+        </ul>
+        <h5>Justify-content (horizontal)</h5>
+        <p>There are five values for the <code>justify-content</code> property</p>
+        <ul>
+            <li><code>flex-start</code> all items will be positioned in order, starting from the left of the parent container, with no extra space between or before them.</li>
+            <li><code>flex-end</code> all items will be positioned in order, with the last item starting on the right side of the parent container, with no extra space between or after them.</li>
+            <li><code>center</code> all items will be positioned in order, in the center of the parent container with no extra space before, between, or after them.</li>
+            <li><code>space-around</code> items will be positioned with equal space before and after each item, resulting in double the space between elements.</li>
+            <li><code>space-between</code> items will be positioned with equal space between them, but no extra space before the first or after the last elements.</li>
+        </ul>
+        <h5>Align-items (vertical)</h5>
+        <p>There are five values we can use for the <code>align-items</code> property:</p>
+        <ul>
+            <li><code>flex-start</code> all elements will be positioned at the top of the parent container.</li>
+            <li><code>flex-end</code> all elements will be positioned at the bottom of the parent container.</li>
+            <li><code>center</code> the center of all elements will be positioned halfway between the top and bottom of the parent container.</li>
+            <li><code>baseline</code> the bottom of the content of all items will be aligned with each other.</li>
+            <li><code>stretch</code> if possible, the items will stretch from top to bottom of the container (this is the default value; elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).</li>
+        </ul>
+        <h5>Flex-grow</h5>
+        <p>The <code>flex-grow</code> property allows us to specify if items should grow to fill a container and also which items should grow proportionally more or less than others.</p>
+        <h5>Flex-shrink</h5>
+        <p>Just as the <code>flex-grow</code> property proportionally stretches flex items, the <code>flex-shrink</code> property can be used to specify which elements will shrink and in what proportions.</p>
+        <h5>Flex-basis</h5>
+        <p><code>flex-basis</code> allows us to specify the width of an item before it stretches or shrinks.</p>
+        <pre>
+            <code>
+    .container {
+        display: flex;
+    }
+    
+    .side {
+        flex-grow: 1;
+        flex-basis: 100px;
+    }
+    
+    .center {
+        flex-grow: 2;
+        flex-basis: 150px;
+    }
+            </code>
+        </pre>
+        <p>In the example above, the <code>.side</code> divs will be 100 pixels wide and the <code>.center</code> div will be 150 pixels wide if the <code>.container</code> div has just the right amount of space (350 pixels, plus a little extra for margins and borders).</p>
+        <h5>Flex</h5>
+        <p>The <code>flex</code> property provides a convenient way for specifying how elements stretch and shrink, while simplifying the CSS required. The <code>flex</code> property allows you to declare <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis </code> all in one line.</p>
+        <p><strong>Note:</strong> The <code>flex</code> property is different from the <code>flex</code> value used for the <code>display</code> property.</p>
+        <pre>
+            <code>
+    .big {
+        flex-grow: 2;
+        flex-shrink: 1;
+        flex-basis: 150px;
+    }
+                
+    .small {
+        flex-grow: 1;
+        flex-shrink: 2;
+        flex-basis: 100px;
+    }
+            </code>
+        </pre>
+        <pre>
+            <code>
+    .big {
+        flex: 2 1 150px;
+    }
+        
+    .small {
+        flex: 1 2 100px;
+    }
+            </code>
+        </pre>
+        <h5>Flex-wrap</h5>
+        <p>Sometimes, we don’t want our content to shrink to fit its container. Instead, we might want flex items to move to the next line when necessary. This can be declared with the <code>flex-wrap</code> property. The <code>flex-wrap</code> property can accept three values:</p>
+        <ul>
+            <li><code>wrap</code> child elements of a flex container that don’t fit into a row will move down to the next line</li>
+            <li><code>wrap-reverse</code> the same functionality as <code>wrap</code>, but the order of rows within a flex container is reversed (for example, in a 2-row flexbox, the first row from a <code>wrap</code> container will become the second in <code>wrap-reverse</code> and the second row from the <code>wrap</code> container will become the first in <code>wrap-reverse</code>)</li>
+            <li><code>nowrap</code></li>
+        </ul>
+        <h5>Align-content</h5>
+        <p>If a flex container has multiple rows of content, we can use <code>align-content</code> to space the rows from top to bottom.</p>
+        <p><code>align-content</code> accepts six values:</p>
+        <ul>
+            <li><code>flex-start</code> all rows of elements will be positioned at the top of the parent container with no extra space between.</li>
+            <li><code>flex-end</code> all rows of elements will be positioned at the bottom of the parent container with no extra space between.</li>
+            <li><code>center</code>  all rows of elements will be positioned at the center of the parent element with no extra space between.</li>
+            <li><code>space-between</code> all rows of elements will be spaced evenly from the top to the bottom of the container with no space above the first or below the last.</li>
+            <li><code>space-around</code>  all rows of elements will be spaced evenly from the top to the bottom of the container with the same amount of space at the top and bottom and between each element.</li>
+            <li><code>stretch</code> if a minimum height or no height is specified, the rows of elements will stretch to fill the parent container from top to bottom (default value).</li>
+        </ul>
+        <h5>Flex-direction</h5>
+        <p>The main axis(horizontal) is used to position flex items with the following properties:</p>
+        <ul>
+            <li><code>justify-content</code></li>
+            <li><code>flex-wrap</code></li>
+            <li><code>flex-grow</code></li>
+            <li><code>flex-shrink</code></li>
+        </ul>
+        <p>The cross axis(vertical) is used to position flex items with the following properties:</p>
+        <ul>
+            <li>align-items</li>
+            <li>align-content</li>
+        </ul>
+        <p>The main axis and cross axis are interchangeable. We can switch them using the<code>flex-direction</code> property. If we add the<code>flex-direction</code> property and give it a value of <code>column</code>, the flex items will be ordered vertically, not horizontally.</p>
+        <p>The flex-direction property can accept four values:</p>
+        <ul>
+            <li><code>row</code> elements will be positioned from left to right across the parent element starting from the top left corner (default).</li>
+            <li><code>row-reverse</code> elements will be positioned from right to left across the parent element starting from the top right corner.</li>
+            <li><code>column</code> elements will be positioned from top to bottom of the parent element starting from the top left corner.</li>
+            <li><code>column-reverse</code> elements will be positioned from the bottom to the top of the parent element starting from the bottom left corner.</li>
+        </ul>
+        <h5>Flex-flow</h5>
+        <p>Like the <code>flex</code> property, the <code>flex-flow</code> property is used to declare both the <code>flex-wrap</code> and <code>flex-direction</code> properties in one line.</p>
+        <pre>
+            <code>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+            </code>
+        </pre>
+        <pre>
+            <code>
+    .container {
+        display: flex;
+        flex-flow: column wrap;
+    }
+            </code>
+        </pre>
     </section>
 
 
