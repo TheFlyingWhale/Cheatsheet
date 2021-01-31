@@ -109,8 +109,8 @@ section section {
 }
 
 section p {
-    margin: 5px 0px; 
-    line-height: 1.5;
+    /*margin: 5px 0px;*/ 
+    line-height: 1.75;
 }
 
 button {

@@ -22,3 +22,92 @@
         </code>
     </pre>
 </section>
+
+<section id="classes">
+    <h3>Classes</h3>
+    <p>Classes are templates for objects and a tool that we can use to quickly produce similar objects.</p>
+    <h4>Constructor</h4>
+    <p>Javascript calls a constructor method when we create a new instance of a class.</p>
+    <pre>
+        <code>
+    class NewClass{
+        constructor(name){
+            this._name = name
+        }
+    }
+        </code>
+    </pre>
+    <h4>Inheritance</h4>
+    <p>Inheritance is when we create a parent class with properties and methods that we can extend to child classes.</p>
+    <p>We use the <code>extends</code> keyword to create a subclass.</p>
+    <p>The <code>super</code> keyword calls the <code>constructor()</code> of a parent class.</p>
+    <pre>
+        <code>
+    class ParentClass{
+        constructor(name){
+            this._name = name
+        }
+
+        get name(){
+            return this._name
+        }
+    }
+
+    class ChildClass extends ParentClass{
+        constructor(name, age){
+            super(name)
+            this._age = age
+        }
+        
+        get age(){
+            return this._age
+        }
+    }
+        </code>
+    </pre>
+    <h4>Static methods</h4>
+    <p>Static methods are called on the class, but not on instances of the class.</p>
+    <pre>
+        <code>
+    class NewClass{
+        constructor(name, age){
+            this._name = name
+            this._age = age
+        }
+
+        get name(){
+            return this._name
+        }
+
+        get age(){
+            return this._age
+        }
+
+        getInfo(){
+            return `${this._name} is ${this._age} years old`
+        }
+
+        static randomName(strArr){
+            return strArr[Math.floor(Math.random()* strArr.length)]
+        }
+    }
+    const newPers = new NewClass('Petter', 48)
+    newPers.getInfo()
+    //Returns 'Petter is 48 years old'
+
+    NewClass.randomName(['Kåre', 'Petter'])
+    //Returns eighter 'Kåre' or 'Petter'
+        </code>
+    </pre>
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://www.taniarascia.com/understanding-classes-in-javascript/">Understanding Classes in JavaScript</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">MDN Class documentation</a>
+            </li>
+        </ul>
+    </aside>
+</section>
