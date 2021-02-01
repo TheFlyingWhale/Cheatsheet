@@ -59,6 +59,18 @@ article {
     margin: 0px;
 }
 
+.warning{
+    background-color: hsl(39, 100%, 15%);
+    border: 2px solid hsl(39, 100%, 10%);
+    border-radius: 10px;
+    padding: 2.5px 15px 2.5px 15px;
+    display: inline-block;
+}
+
+.warning p{
+    margin: 0px;
+}
+
 
 /* Code Box - Start */
 
@@ -83,6 +95,8 @@ code {
     border-radius: 5px;
     font-size: 16px;
     padding: 2.5px 5px;
+    font-family: 'Courier Prime', monospace;
+    line-height: 1.5;
 }
 
 code .comment {

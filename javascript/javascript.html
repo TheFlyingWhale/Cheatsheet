@@ -7,6 +7,7 @@
         <h4>🔗 Useful Links:</h4>
         <ul>
             <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Javascript Documentation</a></li>
+            <li><a target="_blank" href="https://caniuse.com/es6">Can I use?</a></li>
         </ul>
     </aside>
 </section>
@@ -112,16 +113,133 @@
     </aside>
 </section>
 
-<section>
+<section id="modules">
     <h3>Modules</h3>
-    <p>Modules are pieces of code that can be reused in other files.</p>
-</section>
+    <p>Modules in Node.js are reusable pieces of code that can be exported from one program and imported for use in another program.</p>
+    <ul>
+        <li>
+            <p><code>module.exports</code></p>
+        </li>
+        <li>
+            <p><code>require()</code></p>
+        </li>
+    </ul>
+    <p>ES6 introduced a more flexible, easier syntax to export modules:</p>
+    <ul>
+        <li>
+            <p>default exports use <code>export default</code> to export JavaScript objects, functions, and primitive data types.</p>
+        </li>
+        <li>
+            <p>named exports use the <code>export</code> keyword to export data in variables.</p>
+        </li>
+        <li>
+            <p>named exports can be aliased with the <code>as</code> keyword.</p>
+        </li>
+        <li>
+            <p><code>import</code> is a keyword that imports any object, function, or data type.</p>
+        </li>
+    </ul>
 
-<aside class="usefulLinks">
-    <h4>🔗 Useful Links:</h4>
-        <ul>
-            <li>
-                <a target="_blank" href="https://caniuse.com/es6">Can I use?</a>
-            </li>
-        </ul>
-</aside>
+    <aside class="warning">
+        <p>The script tag in HTML needs to have the <code>type="module"</code> attribute for modules to work</p>
+    </aside>
+
+    <h4>Node.js examples:</h4>
+    <h5>Export</h5>
+    <pre>
+        <code>
+    let Course = {}
+    Course.name = 'Javascript Node.js'
+    module.exports = Course
+        </code>
+    </pre>
+    <h5>Import</h5>
+    <pre>
+        <code>
+    var Course = require('./moduleLocation.js')
+    console.log(Course.name)
+        </code>
+    </pre>
+
+    <h4>ES6 Examples:</h4>
+    <h5>Default export</h5>
+    <pre>
+        <code>
+    let Course = {}
+    Course.name = 'Javascript ES6'
+    export default Course
+        </code>
+    </pre>
+
+    <h5>Default import</h5>
+    <pre>
+        <code>
+    import Course from './moduleLocation'
+    console.log(Course.name)
+        </code>
+    </pre>
+
+    <h5>Named exports</h5>
+    <pre>
+        <code>
+    let Course = {}
+    let Student = {}
+    Course.name = 'Javascript ES6'
+    Student.name = 'Ole Walberg'
+    export {Course, Student}
+        </code>
+    </pre>
+    <p>or</p>
+    <pre>
+        <code>
+    export let Course = {}
+    export let Student = {}
+    Course.name = 'Javascript ES6'
+    Student.name = 'Ole Walberg'
+        </code>
+    </pre>
+
+    <h5>Named imports</h5>
+    <pre>
+        <code>
+    import {Course, Student} from './moduleLocation'
+    console.log(Course.name)
+    console.log(Student.name)
+        </code>
+    </pre>
+
+    <h5>Export as</h5>
+    <pre>
+        <code>
+    let superLongNameCourse = {}
+    let superLangNameStudent = {}
+    ...
+    export {superLongNameCourse as Course, superLangNameStudent as Student}
+        </code>
+    </pre>
+
+    <pre>
+        <code>
+    import {Course, Student} from './moduleLocation'
+    console.log(Course.name)
+    console.log(Student.name)
+        </code>
+    </pre>
+
+    <h5>Import as</h5>
+    <pre>
+        <code>
+    export let superLongNameCourse = {}
+    export let superLongNameStudent = {}
+    superLongNameCourse.name = 'Javascript ES6'
+    superLangNameStudent.name = 'Ole Walberg'
+        </code>
+    </pre>
+    <pre>
+        <code>
+    import {superLongNameCourse as Course, superLangNameStudent as Student} from './moduleLocation'
+    console.log(Course.name)
+    console.log(Student.name)
+        </code>
+    </pre>
+</section>
