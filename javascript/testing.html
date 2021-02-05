@@ -1,0 +1,210 @@
+<h2>Testing with Mocha ☕</h2>
+
+<section id="whatIsTesting">
+    <h3>What is testing?</h3>
+    <p>Testing is making sure code behave as planed.</p>
+    <p>There are two types of software-testing</p>
+    <ul>
+        <li>Manual</li>
+        <li>Automated</li>
+    </ul>
+    <p>Manual testing is expensive and STUPED</p>
+    <p>Automated testing is cheaper and improves the quality of development.</p>
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li><a target="_blank" href="https://www.codecademy.com/articles/tdd-u1-good-test">Characteristics of a good Test</a></li>
+            <li><a target="_blank" href="https://mochajs.org/#getting-started">Mocha Documentation</a></li>
+            <li><a target="_blank" href="https://www.chaijs.com/">Chai Assertion Library</a></li>
+        </ul>
+    </aside>
+</section>
+
+<section id="installMocha">
+    <h3>Install Mocha</h3>
+    <p>Using npm(Node Package Manager) we can install Mocha</p>
+    <h4>Initialize</h4>
+    <p>If the project havent been initialized start with doing so:</p>
+    <p><code>npm init</code></p>
+    <p>This creates a package.json file in the project directory <br>First you're prompted some questions regarding the creation of the package <br>Based on your input it creates the package</p>
+    <pre>
+        <code>
+    {
+        "name": "learn-mocha-learn-mocha-install-mocha-i",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "author": "",
+        "license": "ISC"
+    }
+        </code>
+    </pre>
+    <p>The package above is creating following the codecademy tutorial on testing</p>
+    <h4>Install the Mocha package</h4>
+    <p><code>npm install mocha -D</code></p>
+    <p>This command installs mocha and adds it as an dependency</p>
+    <pre>
+        <code>
+    {
+        "name": "learn-mocha-learn-mocha-install-mocha-i",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "author": "",
+        "license": "ISC",
+        "devDependencies": {
+            "mocha": "^8.2.1"
+        }
+    }
+        </code>
+    </pre>
+    <h4>Setup test script</h4>
+    <p>After installing Mocha there are two ways to run it.</p>
+    <ul>
+        <li><code>./node_modules/mocha/bin/mocha</code></li>
+        <li>
+            <code>
+                "scripts": {
+                    "test": "mocha"
+                }
+            </code>
+        </li>
+    </ul>
+    <p>The first is running mocha trough the terminal witch is a tedious method <br>The secound is editing the package.json file so that running <code>npm test</code> does the same</p>
+    <pre>
+        <code>
+    {
+        "name": "learn-mocha-learn-mocha-install-mocha-ii",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+            "test": "mocha"
+        },
+        "author": "",
+        "license": "ISC",
+        "devDependencies": {
+            "mocha": "^4.0.1"
+        }
+    }
+        </code>
+    </pre>
+</section>
+
+<section id="describeAndIt">
+    <h3>Describe and It blocks</h3>
+    <p>In Mocha we group tests using the <code>describe</code> function and define tests using the <code>it</code> function. These two functions can be used to make your test suite complete, maintainable, and expressive in the following ways:</p>
+    <ul>
+        <li>Structure your test suite: you can organize tests into nested groups that reflect the structure of your implementation code.</li>
+        <li>Provide informative messages: you can define your tests using human-readable strings.</li>
+    </ul>
+    <p>Writing a test for <code>Math.min</code> using <code>describe</code> and <code>it</code> looks like this:</p>
+    <pre>
+        <code>
+    describe('Math', () => {
+        describe('.min', () => {
+            it('returns the argument with the lowest value', () => {
+            
+            })
+        })
+    })
+        </code>
+    </pre>
+</section>
+
+<section id="assert">
+    <h3>Assert</h3>
+    <p><code>assert.ok()</code> allows you to compare values and throw errors as needed using one function call.</p>
+    <p>As a Node module, <code>assert</code> can be imported at the top of your files with</p>
+    <p><code>const assert = require('assert')</code></p>
+    <p>You call <code>assert</code> functions like this:</p>
+    <p><code>assert.ok(3 + 4 === 7)</code></p>
+    <h4>Some assert methods</h4>
+    <ul>
+        <li><code>assert.ok(1 === 1)</code> true</li>
+        <li><code>assert.equal(1, '1')</code> true</li>
+        <li><code>assert.notEqual(1, 2)</code> true</li>
+        <li><code>assert.strictEqual(1, '1')</code> false</li>
+        <li><code>assert.deepEqual([1, 2, '3'], [1, 2, 3])</code> true</li>
+        <li><code>assert.deepStrictEqual([1, 2, '3'], [1, 2, 3])</code> false</li>
+    </ul>
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li><a target="_blank" href="https://nodejs.org/api/assert.html">Node.js Assert</a></li>
+        </ul>
+    </aside>
+</section>
+
+<section id="SEV">
+    <h3>Setup, Exercise, and Verify</h3>
+    <p>Separate a test into setup, exercise, and verify phases. This distinct and well-defined separation of steps makes your test more reliable, maintainable, and expressive.</p>
+    <p>The phases are defined as follows:</p>
+    <ul>
+        <li><strong>Setup</strong> - create objects, variables, and set conditions that your test depends on</li>
+        <li><strong>Exercise</strong> - execute the functionality you are testing</li>
+        <li><strong>Verify</strong> - check your expectations against the result of the exercise phase. You can use the assert library here</li>
+    </ul>
+    <h4>Example:</h4>
+    <pre>
+        <code>
+    const assert = require('assert');
+
+    // Naive approach
+    describe('.pop', () => {
+        it('returns the last element in the array [naive]', () => {
+            assert.ok(['padawan', 'knight'].pop() === 'knight'); 
+        });
+    });
+
+    // 3 phase approach
+    describe('.pop', () => {
+        it('returns the last element in the array [3phase]', () => {
+            // Setup
+            const knightString = 'knight';
+            const jediPath = ['padawan', knightString];
+
+            // Exercise
+            const popped = jediPath.pop();
+
+            // Verify
+            assert.ok(popped === knightString);
+        });
+    });
+        </code>
+    </pre>
+    <p>In the code above you can see two approaches for running the same test. The first is hard to understand and fix while the other is not.</p>
+</section>
+
+<section id="teardown">
+    <h3>Teardown</h3>
+    <p>Some tests require a fourth phase called teardown. This step makes your test isolated.</p>
+    <ul>
+        <li>Teardown - reset any conditions that were changed during the test</li>
+    </ul>
+    <p>A test can make changes to its environment that could affect other tests. The teardown phase is used to reset the environment before the next test runs.</p>
+    <p>Some common changes to an environment include</p>
+    <ul>
+        <li>altering files and directory structure</li>
+        <li>changing read and write permissions on a file</li>
+        <li>editing records in a database</li>
+    </ul>
+</section>
+
+<section id="hooks">
+    <h3>Hooks</h3>
+    <p>Using teardown in the <code>it</code> block made your test isolated, but not reliable. <br>If an error occurs before the teardown the test wont complete the teardown.</p>
+    <p>A hook is a piece of code that is executed when a certain event happens. Hooks can be used to set and reset conditions like the setup and teardown phases do. In Mocha, a hook is written within a <code>describe</code> block. <br>Mocha offers hooks such as <code>before()</code> <code>beforeEach</code> <code>after()</code> <code>afterEach()</code></p>
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li><a target="_blank" href="https://mochajs.org/#hooks">Hooks Mocha</a></li>
+        </ul>
+    </aside>
+</section>
