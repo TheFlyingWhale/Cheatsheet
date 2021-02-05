@@ -26,3 +26,4 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#resources').load('resources/resources.html');
 });
+
