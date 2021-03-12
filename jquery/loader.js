@@ -27,3 +27,11 @@ $(document).ready(function () {
     $('#resources').load('resources/resources.html');
 });
 
+$(document).ready(() => {
+    $('#react').load('react/react.html');
+});
+
+$(document).ready(() => {
+    $('#redux').load('redux/redux.html');
+});
+
