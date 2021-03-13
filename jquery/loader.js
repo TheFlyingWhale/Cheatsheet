@@ -13,6 +13,7 @@ $(document).ready(function () {
     $("#javascript").load('javascript/javascript.html');
 });
 
+//Loades the Mocha-Testing Article
 $(document).ready(function () {
     $("#testing").load('javascript/testing.html')
 })
@@ -27,10 +28,12 @@ $(document).ready(function () {
     $('#resources').load('resources/resources.html');
 });
 
+//Loades the React Article
 $(document).ready(() => {
     $('#react').load('react/react.html');
 });
 
+//Loades the Redux Article
 $(document).ready(() => {
     $('#redux').load('redux/redux.html');
 });
