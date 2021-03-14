@@ -1,11 +1,177 @@
 <h2 id="redux">Redux 🏪</h2>
 <section id="whatIsRedux">
     <h3>What is Redux?</h3>
-    <p>CSS is what allows us to style the structure of HTML</p>
+    <p>Redux is a predictable state container for any Javascript application.</p>
     <aside class="usefulLinks">
         <h4>🔗 Useful Links:</h4>
         <ul>
-            <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN CSS Documentation</a></li>
+            <li><a target="_blank" href="https://redux.js.org/">Redux Home Page</a></li>
         </ul>
     </aside>
+</section>
+
+<section id="reduxBasics">
+    <h3>The Basics</h3>
+    <p>Redux acts like a giant parent component that wraps over the entire application. This allows Redux to handle all of the state in place and keep it accessible to ALL child components.</p>
+    <p>There are four main parts to Redux:</p>
+    <section>
+        <h4>Part 1 - State</h4>
+        <p>The default state has to be an object, but could just be an empty object if there are no static data you need access to.</p>
+        <pre>
+            <code>
+    const initialState = ['Take five', 'Claire de Lunde', 'Respect'];
+            </code>
+        </pre>
+    </section>
+    <section>
+        <h4>Part 2 - Actions</h4>
+        <p>Actions are the only way to dispatch(send) changes trough the reducers to the store. Basically your actions are the functions you use in your actual React component to pass your changes back tot he store.</p>
+        <pre>
+            <code>
+    const state = ['Take five', 'Claire de Lune', 'Respect'];
+
+    const addNewSong = {
+        type: 'songs/addSong',
+        payload: 'Halo'
+    }
+
+    const removeSong = {
+        type: 'songs/removeSong',
+        payload: 'Take Five'
+    }
+
+    const removeAll = {
+        type: 'songs/removeAll'
+    }
+            </code>
+        </pre>
+    </section>
+    <section>
+        <h4>Part 3 - Reducers</h4>
+        <p>A reducer, or reducer function, is a plain JavaScript function that defines how the current state and an action are used in combination to create a new state</p>
+        <pre>
+            <code>
+    const initialState = [ 'Take Five', 'Claire de Lune', 'Respect' ];
+
+    const addNewSong = {
+        type: 'songs/addSong',
+        payload: 'Halo'
+    }
+
+    const removeSong = {
+        type: 'songs/removeSong',
+        payload: 'Take Five'
+    }
+
+    const removeAll = {
+        type: 'songs/removeAll'
+    }
+
+    const reducer = (state = initialState, action) => {
+        switch (action.type) {
+            case 'songs/addSong': {
+                return [ ...state, action.payload];
+            }
+            case 'songs/removeSong': {
+                return state.filter(song => song != action.payload);
+            }
+            case 'songs/removeAll': {
+                return [];
+            }
+            default: {
+                return state;
+            }
+        }
+    }
+            </code>
+        </pre>
+    </section>
+    <section>
+        <h4>Part 4 - Store</h4>
+        <p>The store acts as a container for state, it provides a way to dispatch actions, and it calls the reducer when actions are dispatched. In nearly every Redux application, there will only be one store.</p>
+        <p>To create a store you'll have to use the createStore() helper function that takes a single argument, a reducer function</p>
+        <pre>
+            <code>
+    const initialState = [ 'Take Five', 'Claire de Lune', 'Respect' ];
+
+    const addNewSong = {
+        type: 'songs/addSong',
+        payload: 'Halo'
+    }
+
+    const removeSong = {
+        type: 'songs/removeSong',
+        payload: 'Take Five'
+    }
+
+    const removeAll = {
+        type: 'songs/removeAll'
+    }
+
+    const reducer = (state = initialState, action) => {
+        switch (action.type) {
+            case 'songs/addSong': {
+                return [ ...state, action.payload];
+            }
+            case 'songs/removeSong': {
+                return state.filter(song => song != action.payload);
+            }
+            case 'songs/removeAll': {
+                return [];
+            }
+            default: {
+                return state;
+            }
+        }
+    }
+
+    const store = createStore(reducer);
+            </code>
+        </pre>
+        <p>To phrase the data flow using theese terms:</p>
+        <ol>
+            <li>The store initializes the state with a default value.</li>
+            <li>The view displays that state.</li>
+            <li>When a user interacts with the view, like clicking a button, an action is dispatched to the store.</li>
+            <li>The dispatched action and the current state are combined in the store's reducer to determine the next state.</li>
+            <li>The view is updated to display the new state.</li>
+        </ol>
+    </section>
+</section>
+
+<section id="oneWayDataFlow">
+    <h3>One-Way Data flow</h3>
+    <p>In most applications, there are three parts:</p>
+    <ul>
+        <li>State - the current data used in the app</li>
+        <li>View - the user interface displayed to users</li>
+        <li>Actions - events that a user can take to change the state</li>
+    </ul>
+    <p>The flow of information would go like this:</p>
+    <ul>
+        <li>The state holds the current data used by the app's components.</li>
+        <li>The view components display that state data.</li>
+        <li>When a user interacts with the view, like clicking a button, the state will be updated in some way.</li>
+        <li>The view is updated to display the new state.</li>
+    </ul>
+    <p>With plain React, these three parts overlap quite a bit. Components not only render the user interface, but they also may manage their own state. When actions that may change the state occur, components need to directly communicate these changes to each other.</p>
+    <p>Redux helps separate the state, the view, and actions by requiring that the state be managed by a single source. Requests to change the state are sent to this single source by view components in the form of an action. Any components of the view that would be affected by these changes are informed by this single source. By imposing this structure, Redux makes our code more readable, reliable, and maintainable.</p>
+</section>
+
+<section id="rulesOfReducers">
+    <h3>Rules of Reducers</h3>
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li><a target="_blank" href="https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers#rules-of-reducers">Rules of Reducers</a></li>
+        </ul>
+    </aside>
+    <p>In the previous examples the reducer returned a new copy of the state rather than editing it directly. This is to adhere to the rules of reducers provided by the Redux documentation:</p>
+    <ol>
+        <li>They should only calculate the new state value based on the <code>state</code> and <code>action</code> arguments</li>
+        <li>They are not allowed to modify the existing state. Instead, they must copy the existing state and make changes to the copied values.</li>
+        <li>they must not do any asynchronous logic or have other "side effects".</li>
+    </ol>
+    <p>Asynchronous logic or "side effects", means anything that the function does aside from returning a value, e.g. logging to the console, saving a file, setting a timer, making an HTTP request, generating random numbers.</p>
+    <p>These rules make Redux code predictable and easy to debug: test run reliably and other developers know what to expect form the code.</p>
 </section>
