@@ -38,3 +38,7 @@ $(document).ready(() => {
     $('#redux').load('redux/redux.html');
 });
 
+$(document).ready(() => {
+    $('#jest').load('./react/jest.html')
+});
+

@@ -175,3 +175,180 @@
     <p>Asynchronous logic or "side effects", means anything that the function does aside from returning a value, e.g. logging to the console, saving a file, setting a timer, making an HTTP request, generating random numbers.</p>
     <p>These rules make Redux code predictable and easy to debug: test run reliably and other developers know what to expect form the code.</p>
 </section>
+
+<section id="reduxApi">
+    <h3>API Refrence</h3>
+    <p>Redux defines a set of contracts for you to implement (such as reducres) and provides a few helper functions to tie these contracts together</p>
+    <h4>Top-Level Exports</h4>
+    <ul>
+        <li>createStore(reducer, [preloadedState], [enhancer])</li>
+        <li>combineReducers(reducres)</li>
+        <li>applyMiddleware(...middlewares)</li>
+        <li>bindActionCreators(actionCreators, dispatch)</li>
+        <li>compose(...functions)</li>
+    </ul>
+    <h4>Store API</h4>
+    <ul>
+        <li>Store</li>
+        <ul>
+            <li>getState()</li>
+            <li>dispatch(action)</li>
+            <li>subscribe(listener)</li>
+            <li>replaceReducer(nextReducer)</li>
+        </ul>
+    </ul>
+    <h4>Importing</h4>
+    <p>Every function described above is a top-level export. You can import any of them like this:</p>
+    <h5>ES6</h5>
+    <pre>
+        <code>
+    import { createStore } from 'redux'
+        </code>
+    </pre>
+    <h5>ES5(CommonJS)</h5>
+    <pre>
+        <code>
+    var createStore = require('redux').createStore
+        </code>
+    </pre>
+    <h5>ES5 (UMD build)</h5>
+    <pre>
+        <code>
+    var createStore = Redux.createStore
+        </code>
+    </pre>
+
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li><a target="_blank" href="https://redux.js.org/api/api-reference">Redux Documentation</a></li>
+        </ul>
+    </aside>
+
+    <section id="createStore">
+        <h3>createStore</h3>
+        <h4>createStore(reducer, [preloadedState], [enhancer])</h4>
+        <p>Creates a Redux store that holds the complete state tree of your app.</p>
+        <p>There should only be a single store in your app.</p>
+        <h4>Example</h4>
+        <pre>
+            <code>
+        import { createStore } from 'redux';
+    
+        function todos(state = [], action) {
+            switch (action.type) {
+                case 'ADD_TODO':
+                    return state.concat([action.next]);
+                default:
+                    return state
+            }
+        }
+    
+        const store = createStore(todos, ['Use Redux'])
+    
+        store.dispatch({
+            type: 'ADD_TODO',
+            payload: 'Read the docs'
+        });
+    
+        console.log(store.getState());
+        // [ 'Use Redux', 'Read the docs']
+            </code>
+        </pre>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank" href="https://redux.js.org/api/createstore">Redux Documentation</a></li>
+            </ul>
+        </aside>
+    </section>
+
+    <section id="store">
+        <h3>store</h3>
+        <p>A store holds the whole state tree of your appliaction. The only way to change the state inside it is to dispatch an action on it.</p>
+        <p>A store is not a class. It's just an object with a few methods on it. To create it, pass your root reducing function to <code>createStore</code></p>
+        <h4>Store Methods</h4>
+        <ul>
+            <li>getState()</li>
+            <li>dispatch(action)</li>
+            <li>subscribe(listener)</li>
+            <li>replaceReducer(nextReducer)</li>
+        </ul>
+        <h5>getState()</h5>
+        <p>Returns the current state tree of your application. It is equal to the last value returned by the store's reducer</p>
+        <h5>dispatch(action)</h5>
+        <p>
+            <b>Definition:</b>
+            <br>
+            <i>send off to a destination or for a purpose</i>
+        </p>
+        <p>Dispatches an action. This is the only way to trigger a state change.</p>
+        <p>
+            The store's reducing function will be called with the current <code>getState()</code> result and the given <code>action</code> synchronously.
+            <br>
+            Its return value will be considered the enxt state. It will be returned from <code>getState()</code> from now on, and the change listeners will immediatly be notified.
+        </p>
+        <h6>Example</h6>
+        <pre>
+            <code>
+    import { createStore } from 'redux';
+    const store = createStore(todos, ['Use Redux']);
+
+    const addTodo = text => {
+        return {
+            type: 'ADD_TODO',
+            text: text
+        }
+    }
+
+    store.dispatch(addTodo('Read the docs'));
+    store.dispatch(addTodo('Read about the middleware'));
+            </code>
+        </pre>
+        <h5>subscribe(listener)</h5>
+        <p>Adds a change listener. It will be called any time an action is dispatched, and some part of the state tree may potentially have changes. You may then call <code>getState()</code> to read the current state tree inside the callback.</p>
+        <p>You may call <code>dispatch()</code> from a change listener.</p>
+        <h6>Example</h6>
+        <pre>
+            <code>
+    function select(state) {
+        return state.some.deep.property
+    }
+
+    let currentValue;
+    function handleChange() {
+        let previousValue = currentValue;
+        currentValue = select(store.getState())
+
+        if (previousValue !== currentValue){
+            console.log(
+                'Some deep nested property changed from',
+                previousValue,
+                'to',
+                currentValue
+            )
+        }
+    }
+
+    const unsubscribe = store.subscribe(handleChange);
+    unsubscribe();
+            </code>
+        </pre>
+
+        <h5>replaceReducer(nextReducer)</h5>
+        <p>Replaces the reducer currently used by the store to calculate the state</p>
+
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank" href="https://redux.js.org/api/store">Redux Documentation</a></li>
+            </ul>
+        </aside>
+    </section>
+
+    <section id="combineReducers">
+        <h3>combineReducers</h3>
+        <p>As your app grows more complex, you'll want to split your reducing functions into separate functions, each managing independent parts of the state</p>
+        <p>The <code>combineReducers</code> helper function turns an object of whose values are different reduction function into a single reducing function you can pass to createStore</p>
+    </section>
+</section>
