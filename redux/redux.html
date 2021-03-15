@@ -1,32 +1,37 @@
-<h2 id="redux">Redux 🏪</h2>
-<section id="whatIsRedux">
-    <h3>What is Redux?</h3>
-    <p>Redux is a predictable state container for any Javascript application.</p>
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
-        <ul>
-            <li><a target="_blank" href="https://redux.js.org/">Redux Home Page</a></li>
-        </ul>
-    </aside>
-</section>
+<section>
+    <h2 id="redux">Redux 🏪</h2>
+    <section id="whatIsRedux">
+        <h3>What is Redux?</h3>
+        <p>Redux is a predictable state container for any Javascript application.</p>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank" href="https://redux.js.org/">Redux Home Page</a></li>
+            </ul>
+        </aside>
+    </section>
 
-<section id="reduxBasics">
-    <h3>The Basics</h3>
-    <p>Redux acts like a giant parent component that wraps over the entire application. This allows Redux to handle all of the state in place and keep it accessible to ALL child components.</p>
-    <p>There are four main parts to Redux:</p>
-    <section>
-        <h4>Part 1 - State</h4>
-        <p>The default state has to be an object, but could just be an empty object if there are no static data you need access to.</p>
-        <pre>
+    <section id="reduxBasics">
+        <h3>The Basics</h3>
+        <p>Redux acts like a giant parent component that wraps over the entire application. This allows Redux to handle
+            all of the state in place and keep it accessible to ALL child components.</p>
+        <p>There are four main parts to Redux:</p>
+        <section>
+            <h4>Part 1 - State</h4>
+            <p>The default state has to be an object, but could just be an empty object if there are no static data you
+                need access to.</p>
+            <pre>
             <code>
     const initialState = ['Take five', 'Claire de Lunde', 'Respect'];
             </code>
         </pre>
-    </section>
-    <section>
-        <h4>Part 2 - Actions</h4>
-        <p>Actions are the only way to dispatch(send) changes trough the reducers to the store. Basically your actions are the functions you use in your actual React component to pass your changes back tot he store.</p>
-        <pre>
+        </section>
+        <section>
+            <h4>Part 2 - Actions</h4>
+            <p>Actions are the only way to dispatch(send) changes trough the reducers to the store. Basically your
+                actions are the functions you use in your actual React component to pass your changes back tot he store.
+            </p>
+            <pre>
             <code>
     const state = ['Take five', 'Claire de Lune', 'Respect'];
 
@@ -45,11 +50,12 @@
     }
             </code>
         </pre>
-    </section>
-    <section>
-        <h4>Part 3 - Reducers</h4>
-        <p>A reducer, or reducer function, is a plain JavaScript function that defines how the current state and an action are used in combination to create a new state</p>
-        <pre>
+        </section>
+        <section>
+            <h4>Part 3 - Reducers</h4>
+            <p>A reducer, or reducer function, is a plain JavaScript function that defines how the current state and an
+                action are used in combination to create a new state</p>
+            <pre>
             <code>
     const initialState = [ 'Take Five', 'Claire de Lune', 'Respect' ];
 
@@ -85,12 +91,14 @@
     }
             </code>
         </pre>
-    </section>
-    <section>
-        <h4>Part 4 - Store</h4>
-        <p>The store acts as a container for state, it provides a way to dispatch actions, and it calls the reducer when actions are dispatched. In nearly every Redux application, there will only be one store.</p>
-        <p>To create a store you'll have to use the createStore() helper function that takes a single argument, a reducer function</p>
-        <pre>
+        </section>
+        <section>
+            <h4>Part 4 - Store</h4>
+            <p>The store acts as a container for state, it provides a way to dispatch actions, and it calls the reducer
+                when actions are dispatched. In nearly every Redux application, there will only be one store.</p>
+            <p>To create a store you'll have to use the createStore() helper function that takes a single argument, a
+                reducer function</p>
+            <pre>
             <code>
     const initialState = [ 'Take Five', 'Claire de Lune', 'Respect' ];
 
@@ -128,110 +136,126 @@
     const store = createStore(reducer);
             </code>
         </pre>
-        <p>To phrase the data flow using theese terms:</p>
-        <ol>
-            <li>The store initializes the state with a default value.</li>
-            <li>The view displays that state.</li>
-            <li>When a user interacts with the view, like clicking a button, an action is dispatched to the store.</li>
-            <li>The dispatched action and the current state are combined in the store's reducer to determine the next state.</li>
-            <li>The view is updated to display the new state.</li>
-        </ol>
+            <p>To phrase the data flow using theese terms:</p>
+            <ol>
+                <li>The store initializes the state with a default value.</li>
+                <li>The view displays that state.</li>
+                <li>When a user interacts with the view, like clicking a button, an action is dispatched to the store.
+                </li>
+                <li>The dispatched action and the current state are combined in the store's reducer to determine the
+                    next state.</li>
+                <li>The view is updated to display the new state.</li>
+            </ol>
+        </section>
     </section>
-</section>
 
-<section id="oneWayDataFlow">
-    <h3>One-Way Data flow</h3>
-    <p>In most applications, there are three parts:</p>
-    <ul>
-        <li>State - the current data used in the app</li>
-        <li>View - the user interface displayed to users</li>
-        <li>Actions - events that a user can take to change the state</li>
-    </ul>
-    <p>The flow of information would go like this:</p>
-    <ul>
-        <li>The state holds the current data used by the app's components.</li>
-        <li>The view components display that state data.</li>
-        <li>When a user interacts with the view, like clicking a button, the state will be updated in some way.</li>
-        <li>The view is updated to display the new state.</li>
-    </ul>
-    <p>With plain React, these three parts overlap quite a bit. Components not only render the user interface, but they also may manage their own state. When actions that may change the state occur, components need to directly communicate these changes to each other.</p>
-    <p>Redux helps separate the state, the view, and actions by requiring that the state be managed by a single source. Requests to change the state are sent to this single source by view components in the form of an action. Any components of the view that would be affected by these changes are informed by this single source. By imposing this structure, Redux makes our code more readable, reliable, and maintainable.</p>
-</section>
-
-<section id="rulesOfReducers">
-    <h3>Rules of Reducers</h3>
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
+    <section id="oneWayDataFlow">
+        <h3>One-Way Data flow</h3>
+        <p>In most applications, there are three parts:</p>
         <ul>
-            <li><a target="_blank" href="https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers#rules-of-reducers">Rules of Reducers</a></li>
+            <li>State - the current data used in the app</li>
+            <li>View - the user interface displayed to users</li>
+            <li>Actions - events that a user can take to change the state</li>
         </ul>
-    </aside>
-    <p>In the previous examples the reducer returned a new copy of the state rather than editing it directly. This is to adhere to the rules of reducers provided by the Redux documentation:</p>
-    <ol>
-        <li>They should only calculate the new state value based on the <code>state</code> and <code>action</code> arguments</li>
-        <li>They are not allowed to modify the existing state. Instead, they must copy the existing state and make changes to the copied values.</li>
-        <li>they must not do any asynchronous logic or have other "side effects".</li>
-    </ol>
-    <p>Asynchronous logic or "side effects", means anything that the function does aside from returning a value, e.g. logging to the console, saving a file, setting a timer, making an HTTP request, generating random numbers.</p>
-    <p>These rules make Redux code predictable and easy to debug: test run reliably and other developers know what to expect form the code.</p>
-</section>
-
-<section id="reduxApi">
-    <h3>API Refrence</h3>
-    <p>Redux defines a set of contracts for you to implement (such as reducres) and provides a few helper functions to tie these contracts together</p>
-    <h4>Top-Level Exports</h4>
-    <ul>
-        <li>createStore(reducer, [preloadedState], [enhancer])</li>
-        <li>combineReducers(reducres)</li>
-        <li>applyMiddleware(...middlewares)</li>
-        <li>bindActionCreators(actionCreators, dispatch)</li>
-        <li>compose(...functions)</li>
-    </ul>
-    <h4>Store API</h4>
-    <ul>
-        <li>Store</li>
+        <p>The flow of information would go like this:</p>
         <ul>
-            <li>getState()</li>
-            <li>dispatch(action)</li>
-            <li>subscribe(listener)</li>
-            <li>replaceReducer(nextReducer)</li>
+            <li>The state holds the current data used by the app's components.</li>
+            <li>The view components display that state data.</li>
+            <li>When a user interacts with the view, like clicking a button, the state will be updated in some way.</li>
+            <li>The view is updated to display the new state.</li>
         </ul>
-    </ul>
-    <h4>Importing</h4>
-    <p>Every function described above is a top-level export. You can import any of them like this:</p>
-    <h5>ES6</h5>
-    <pre>
+        <p>With plain React, these three parts overlap quite a bit. Components not only render the user interface, but
+            they also may manage their own state. When actions that may change the state occur, components need to
+            directly communicate these changes to each other.</p>
+        <p>Redux helps separate the state, the view, and actions by requiring that the state be managed by a single
+            source. Requests to change the state are sent to this single source by view components in the form of an
+            action. Any components of the view that would be affected by these changes are informed by this single
+            source. By imposing this structure, Redux makes our code more readable, reliable, and maintainable.</p>
+    </section>
+
+    <section id="rulesOfReducers">
+        <h3>Rules of Reducers</h3>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank"
+                        href="https://redux.js.org/tutorials/fundamentals/part-3-state-actions-reducers#rules-of-reducers">Rules
+                        of Reducers</a></li>
+            </ul>
+        </aside>
+        <p>In the previous examples the reducer returned a new copy of the state rather than editing it directly. This
+            is to adhere to the rules of reducers provided by the Redux documentation:</p>
+        <ol>
+            <li>They should only calculate the new state value based on the <code>state</code> and <code>action</code>
+                arguments</li>
+            <li>They are not allowed to modify the existing state. Instead, they must copy the existing state and make
+                changes to the copied values.</li>
+            <li>they must not do any asynchronous logic or have other "side effects".</li>
+        </ol>
+        <p>Asynchronous logic or "side effects", means anything that the function does aside from returning a value,
+            e.g. logging to the console, saving a file, setting a timer, making an HTTP request, generating random
+            numbers.</p>
+        <p>These rules make Redux code predictable and easy to debug: test run reliably and other developers know what
+            to expect form the code.</p>
+    </section>
+
+    <section id="reduxApi">
+        <h3>API Refrence</h3>
+        <p>Redux defines a set of contracts for you to implement (such as reducres) and provides a few helper functions
+            to tie these contracts together</p>
+        <h4>Top-Level Exports</h4>
+        <ul>
+            <li>createStore(reducer, [preloadedState], [enhancer])</li>
+            <li>combineReducers(reducres)</li>
+            <li>applyMiddleware(...middlewares)</li>
+            <li>bindActionCreators(actionCreators, dispatch)</li>
+            <li>compose(...functions)</li>
+        </ul>
+        <h4>Store API</h4>
+        <ul>
+            <li>Store</li>
+            <ul>
+                <li>getState()</li>
+                <li>dispatch(action)</li>
+                <li>subscribe(listener)</li>
+                <li>replaceReducer(nextReducer)</li>
+            </ul>
+        </ul>
+        <h4>Importing</h4>
+        <p>Every function described above is a top-level export. You can import any of them like this:</p>
+        <h5>ES6</h5>
+        <pre>
         <code>
     import { createStore } from 'redux'
         </code>
     </pre>
-    <h5>ES5(CommonJS)</h5>
-    <pre>
+        <h5>ES5(CommonJS)</h5>
+        <pre>
         <code>
     var createStore = require('redux').createStore
         </code>
     </pre>
-    <h5>ES5 (UMD build)</h5>
-    <pre>
+        <h5>ES5 (UMD build)</h5>
+        <pre>
         <code>
     var createStore = Redux.createStore
         </code>
     </pre>
 
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
-        <ul>
-            <li><a target="_blank" href="https://redux.js.org/api/api-reference">Redux Documentation</a></li>
-        </ul>
-    </aside>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank" href="https://redux.js.org/api/api-reference">Redux Documentation</a></li>
+            </ul>
+        </aside>
 
-    <section id="createStore">
-        <h3>createStore</h3>
-        <h4>createStore(reducer, [preloadedState], [enhancer])</h4>
-        <p>Creates a Redux store that holds the complete state tree of your app.</p>
-        <p>There should only be a single store in your app.</p>
-        <h4>Example</h4>
-        <pre>
+        <section id="createStore">
+            <h3>createStore</h3>
+            <h4>createStore(reducer, [preloadedState], [enhancer])</h4>
+            <p>Creates a Redux store that holds the complete state tree of your app.</p>
+            <p>There should only be a single store in your app.</p>
+            <h4>Example</h4>
+            <pre>
             <code>
         import { createStore } from 'redux';
     
@@ -255,41 +279,46 @@
         // [ 'Use Redux', 'Read the docs']
             </code>
         </pre>
-        <aside class="usefulLinks">
-            <h4>🔗 Useful Links:</h4>
-            <ul>
-                <li><a target="_blank" href="https://redux.js.org/api/createstore">Redux Documentation</a></li>
-            </ul>
-        </aside>
-    </section>
+            <aside class="usefulLinks">
+                <h4>🔗 Useful Links:</h4>
+                <ul>
+                    <li><a target="_blank" href="https://redux.js.org/api/createstore">Redux Documentation</a></li>
+                </ul>
+            </aside>
+        </section>
 
-    <section id="store">
-        <h3>store</h3>
-        <p>A store holds the whole state tree of your appliaction. The only way to change the state inside it is to dispatch an action on it.</p>
-        <p>A store is not a class. It's just an object with a few methods on it. To create it, pass your root reducing function to <code>createStore</code></p>
-        <h4>Store Methods</h4>
-        <ul>
-            <li>getState()</li>
-            <li>dispatch(action)</li>
-            <li>subscribe(listener)</li>
-            <li>replaceReducer(nextReducer)</li>
-        </ul>
-        <h5>getState()</h5>
-        <p>Returns the current state tree of your application. It is equal to the last value returned by the store's reducer</p>
-        <h5>dispatch(action)</h5>
-        <p>
-            <b>Definition:</b>
-            <br>
-            <i>send off to a destination or for a purpose</i>
-        </p>
-        <p>Dispatches an action. This is the only way to trigger a state change.</p>
-        <p>
-            The store's reducing function will be called with the current <code>getState()</code> result and the given <code>action</code> synchronously.
-            <br>
-            Its return value will be considered the enxt state. It will be returned from <code>getState()</code> from now on, and the change listeners will immediatly be notified.
-        </p>
-        <h6>Example</h6>
-        <pre>
+        <section id="store">
+            <h3>store</h3>
+            <p>A store holds the whole state tree of your appliaction. The only way to change the state inside it is to
+                dispatch an action on it.</p>
+            <p>A store is not a class. It's just an object with a few methods on it. To create it, pass your root
+                reducing function to <code>createStore</code></p>
+            <h4>Store Methods</h4>
+            <ul>
+                <li>getState()</li>
+                <li>dispatch(action)</li>
+                <li>subscribe(listener)</li>
+                <li>replaceReducer(nextReducer)</li>
+            </ul>
+            <h5>getState()</h5>
+            <p>Returns the current state tree of your application. It is equal to the last value returned by the store's
+                reducer</p>
+            <h5>dispatch(action)</h5>
+            <p>
+                <b>Definition:</b>
+                <br>
+                <i>send off to a destination or for a purpose</i>
+            </p>
+            <p>Dispatches an action. This is the only way to trigger a state change.</p>
+            <p>
+                The store's reducing function will be called with the current <code>getState()</code> result and the
+                given <code>action</code> synchronously.
+                <br>
+                Its return value will be considered the enxt state. It will be returned from <code>getState()</code>
+                from now on, and the change listeners will immediatly be notified.
+            </p>
+            <h6>Example</h6>
+            <pre>
             <code>
     import { createStore } from 'redux';
     const store = createStore(todos, ['Use Redux']);
@@ -305,11 +334,13 @@
     store.dispatch(addTodo('Read about the middleware'));
             </code>
         </pre>
-        <h5>subscribe(listener)</h5>
-        <p>Adds a change listener. It will be called any time an action is dispatched, and some part of the state tree may potentially have changes. You may then call <code>getState()</code> to read the current state tree inside the callback.</p>
-        <p>You may call <code>dispatch()</code> from a change listener.</p>
-        <h6>Example</h6>
-        <pre>
+            <h5>subscribe(listener)</h5>
+            <p>Adds a change listener. It will be called any time an action is dispatched, and some part of the state
+                tree may potentially have changes. You may then call <code>getState()</code> to read the current state
+                tree inside the callback.</p>
+            <p>You may call <code>dispatch()</code> from a change listener.</p>
+            <h6>Example</h6>
+            <pre>
             <code>
     function select(state) {
         return state.some.deep.property
@@ -335,45 +366,50 @@
             </code>
         </pre>
 
-        <h5>replaceReducer(nextReducer)</h5>
-        <p>Replaces the reducer currently used by the store to calculate the state</p>
+            <h5>replaceReducer(nextReducer)</h5>
+            <p>Replaces the reducer currently used by the store to calculate the state</p>
 
-        <aside class="usefulLinks">
-            <h4>🔗 Useful Links:</h4>
-            <ul>
-                <li><a target="_blank" href="https://redux.js.org/api/store">Redux Documentation</a></li>
-            </ul>
-        </aside>
+            <aside class="usefulLinks">
+                <h4>🔗 Useful Links:</h4>
+                <ul>
+                    <li><a target="_blank" href="https://redux.js.org/api/store">Redux Documentation</a></li>
+                </ul>
+            </aside>
+        </section>
+
+        <section id="combineReducers">
+            <h3>combineReducers</h3>
+            <p>As your app grows more complex, you'll want to split your reducing functions into separate functions,
+                each managing independent parts of the state</p>
+            <p>The <code>combineReducers</code> helper function turns an object of whose values are different reduction
+                function into a single reducing function you can pass to createStore</p>
+        </section>
     </section>
 
-    <section id="combineReducers">
-        <h3>combineReducers</h3>
-        <p>As your app grows more complex, you'll want to split your reducing functions into separate functions, each managing independent parts of the state</p>
-        <p>The <code>combineReducers</code> helper function turns an object of whose values are different reduction function into a single reducing function you can pass to createStore</p>
-    </section>
-</section>
-
-<section id="reactRedux">
-    <h3>React Redux</h3>
-    <p>React Redux is the official React binding for Redux. It lets your React components read data from a Redux store, and sipatch action to the store to update data.</p>
-    <h4>Installation</h4>
-    <pre>
+    <section id="reactRedux">
+        <h3>React Redux</h3>
+        <p>React Redux is the official React binding for Redux. It lets your React components read data from a Redux
+            store, and sipatch action to the store to update data.</p>
+        <h4>Installation</h4>
+        <pre>
         <code>
     $ npm install react-redux
         </code>
     </pre>
 
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
-        <ul>
-            <li><a target="_blank" href="https://react-redux.js.org/introduction/quick-start">React Redux Documentation</a></li>
-        </ul>
-    </aside>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank" href="https://react-redux.js.org/introduction/quick-start">React Redux
+                        Documentation</a></li>
+            </ul>
+        </aside>
 
-    <section id="provider">
-        <h3>Provider</h3>
-        <p>React Redux provides <code>&lt;Provider /&gt;</code>, which makes the Redux store available to the rest of your app</p>
-        <pre>
+        <section id="provider">
+            <h3>Provider</h3>
+            <p>React Redux provides <code>&lt;Provider /&gt;</code>, which makes the Redux store available to the rest
+                of your app</p>
+            <pre>
             <code>
     import React from 'react';
     import ReactDOM from 'react-dom';
@@ -391,13 +427,13 @@
     )
             </code>
         </pre>
-    </section>
+        </section>
 
-    <section id="connect">
-        <h3>connect()</h3>
-        <p>React Redux provides a <code>connect</code> function for you to connect your component to the store.</p>
-        <p>Normally, you'll call <code>connect</code> in this way:</p>
-        <pre>
+        <section id="connect">
+            <h3>connect()</h3>
+            <p>React Redux provides a <code>connect</code> function for you to connect your component to the store.</p>
+            <p>Normally, you'll call <code>connect</code> in this way:</p>
+            <pre>
             <code>
     import { connect } from 'react-redux';
     import { increment, decrement, reset } from './actionCreators';
@@ -416,60 +452,65 @@
 
             </code>
         </pre>
-    </section>
-    
-    <section id="reactReduxHooks">
-        <h3>Hooks</h3>
-    </section>
-</section>
+        </section>
 
-<section id="reduxToolkit">
-    <h3>Redux Toolkit</h3>
-    <p>The <b>Redux Toolkit</b> package is intended to be the standard way to write Redux logic. It was originally created to help address three common concerns about Redux:</p>
-    <ul>
-        <li>"Configuring a Redux store is too complicated"</li>
-        <li>"I have to add a lot of packages to get Redux to do anything useful"</li>
-        <li>"Redux requires too much boilerplate code"</li>
-    </ul>
+        <section id="reactReduxHooks">
+            <h3>Hooks</h3>
+        </section>
+    </section>
 
-    <h4>Installation</h4>
-    <h5>Using Create React App</h5>
-    <p>The recommended way to start new apps with React and Redux Toolkit is by using the official Redux+JS template for Create React App, which takes advantage of React Redux's integration with React components.</p>
-    <pre>
+    <section id="reduxToolkit">
+        <h3>Redux Toolkit</h3>
+        <p>The <b>Redux Toolkit</b> package is intended to be the standard way to write Redux logic. It was originally
+            created to help address three common concerns about Redux:</p>
+        <ul>
+            <li>"Configuring a Redux store is too complicated"</li>
+            <li>"I have to add a lot of packages to get Redux to do anything useful"</li>
+            <li>"Redux requires too much boilerplate code"</li>
+        </ul>
+
+        <h4>Installation</h4>
+        <h5>Using Create React App</h5>
+        <p>The recommended way to start new apps with React and Redux Toolkit is by using the official Redux+JS template
+            for Create React App, which takes advantage of React Redux's integration with React components.</p>
+        <pre>
         <code>
     $ npx create-react-app my-app --template redux
         </code>
     </pre>
-    <p>There is also a Redux+TS template for CRA as well:</p>
-    <pre>
+        <p>There is also a Redux+TS template for CRA as well:</p>
+        <pre>
         <code>
     $ npx create-react-app my-app --template redux-typescript
         </code>
     </pre>
-    <h5>An Existing App</h5>
-    <p>Redux Toolkit is available as a package on NPM for use with a module bundler or in a Node application:</p>
-    <pre>
+        <h5>An Existing App</h5>
+        <p>Redux Toolkit is available as a package on NPM for use with a module bundler or in a Node application:</p>
+        <pre>
         <code>
     $ npm install @reduxjs/toolkit
         </code>
     </pre>
 
-    <h4>What's Included</h4>
-    <p>Redux Toolkit includes these APIs:</p>
-    <ul>
-        <li><a href="#">configureStore()</a></li>
-        <li><a href="#">createReducer()</a></li>
-        <li><a href="#">createAction()</a></li>
-        <li><a href="#">createSlice()</a></li>
-        <li><a href="#">createAsyncThunk</a></li>
-        <li><a href="#">createEntityAdapter</a></li>
-        <li><a href="#">createSelector</a></li>
-    </ul>
+        <h4>What's Included</h4>
+        <p>Redux Toolkit includes these APIs:</p>
+        <ul>
+            <li><a href="#">configureStore()</a></li>
+            <li><a href="#">createReducer()</a></li>
+            <li><a href="#">createAction()</a></li>
+            <li><a href="#">createSlice()</a></li>
+            <li><a href="#">createAsyncThunk</a></li>
+            <li><a href="#">createEntityAdapter</a></li>
+            <li><a href="#">createSelector</a></li>
+        </ul>
 
-    <section>
-        <h3>configureStore</h3>
-        <p>A friendly abstraction over the standard Redux createStore function that adds good defaults to the store setup for a better development experience.</p>
-        <h4>Parameters</h4>
-        <p><code>configureStore</code> accepts a single configuration object parameter, with the following options:</p>
+        <section>
+            <h3>configureStore</h3>
+            <p>A friendly abstraction over the standard Redux createStore function that adds good defaults to the store
+                setup for a better development experience.</p>
+            <h4>Parameters</h4>
+            <p><code>configureStore</code> accepts a single configuration object parameter, with the following options:
+            </p>
+        </section>
     </section>
 </section>

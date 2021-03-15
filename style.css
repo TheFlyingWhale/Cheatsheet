@@ -123,6 +123,10 @@ section section {
     margin: 25px 0px 0px 0px;
 }
 
+section section section {
+    background-color: rgb(35, 35, 35);
+}
+
 section p {
     /*margin: 5px 0px;*/ 
     line-height: 1.75;

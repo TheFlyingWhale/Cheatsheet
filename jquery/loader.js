@@ -1,3 +1,15 @@
+/**
+ * Components Loading
+ */
+
+$(document).ready(() => {
+    $('nav').load('../nav.html');
+});
+
+/**
+ * Article loading
+ */
+
 //Loades the HTML Article
 $(document).ready(function () {
     $("#html").load('html/html.html');
@@ -15,7 +27,7 @@ $(document).ready(function () {
 
 //Loades the Mocha-Testing Article
 $(document).ready(function () {
-    $("#testing").load('javascript/testing.html')
+    $("#testingMocha").load('../testing/testingMocha.html')
 })
 
 //Loades the Design Article
@@ -38,7 +50,18 @@ $(document).ready(() => {
     $('#redux').load('redux/redux.html');
 });
 
+//Loades the Jest Article
 $(document).ready(() => {
-    $('#jest').load('./react/jest.html')
+    $('#jest').load('./testing/TestingJest.html')
+});
+
+//Loades the Enzyme Article
+$(document).ready(() => {
+    $('#testingEnzyme').load('./testing/TestingEnzyme.html');
+});
+
+//Loades the Selenium Article
+$(document).ready(() => {
+    $('#selenium').load('./testing/testingSelenium.html');
 });
 

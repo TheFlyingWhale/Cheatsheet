@@ -1,98 +1,104 @@
-<h2>CSS 🎨</h2>
-<section id="whatiscss">
-    <h3>What is CSS?</h3>
-    <p>CSS is what allows us to style the structure of HTML</p>
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
-        <ul>
-            <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN CSS Documentation</a></li>
-        </ul>
-    </aside>
-</section>
+<section>
+    <h2>CSS 🎨</h2>
+    <section id="whatiscss">
+        <h3>What is CSS?</h3>
+        <p>CSS is what allows us to style the structure of HTML</p>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN CSS
+                        Documentation</a></li>
+            </ul>
+        </aside>
+    </section>
 
-<section id="color">
-    <h3>Color</h3>
-    <p>Colors are an important element in creating good visual design.</p>
-    <p>There are four types of syntax to use on both <code>color</code> and <code>background-color</code></p>
-    <ul>
-        <li><code>colorname</code> (like <code>red</code>)</li>
-        <li><code>#hex</code> (like <code>#FFFFFF</code> or <code>#FFF</code>)</li>
-        <li><code>rgb()</code> (like <code>rgb(255, 255, 255)</code>)</li>
-        <li><code>hsl()</code> (like <code>hsla(34, 100%, 50%)</code> )</li>
-    </ul>
-    <h4>Colorname</h4>
-    <pre>
+    <section id="color">
+        <h3>Color</h3>
+        <p>Colors are an important element in creating good visual design.</p>
+        <p>There are four types of syntax to use on both <code>color</code> and <code>background-color</code></p>
+        <ul>
+            <li><code>colorname</code> (like <code>red</code>)</li>
+            <li><code>#hex</code> (like <code>#FFFFFF</code> or <code>#FFF</code>)</li>
+            <li><code>rgb()</code> (like <code>rgb(255, 255, 255)</code>)</li>
+            <li><code>hsl()</code> (like <code>hsla(34, 100%, 50%)</code> )</li>
+        </ul>
+        <h4>Colorname</h4>
+        <pre>
         <code>
     element{
         color: red;
     }
         </code>
     </pre>
-    <h4>Hex</h4>
-    <p>Hex stands for Hexadecimal.</p>
-    <p>The hex value can consist of eighter 6 or 3 symbols.</p>
-    <p>Theese symbols are grouped in the same way as rgb. The two first symbols are for Red, then Green followed by Blue.</p>
-    <p>In the example bellow you can see that we fill only the Red section, resulting in the color being red.</p>
-    <pre>
+        <h4>Hex</h4>
+        <p>Hex stands for Hexadecimal.</p>
+        <p>The hex value can consist of eighter 6 or 3 symbols.</p>
+        <p>Theese symbols are grouped in the same way as rgb. The two first symbols are for Red, then Green followed by
+            Blue.</p>
+        <p>In the example bellow you can see that we fill only the Red section, resulting in the color being red.</p>
+        <pre>
         <code>
     element{
         color: #FF0000;
     }
         </code>
     </pre>
-    <h4>Rgb(a)</h4>
-    <p>Rgb stands for Red, Green, Blue</p>
-    <p>Aplha can also be used to add transparency</p>
-    <pre>
+        <h4>Rgb(a)</h4>
+        <p>Rgb stands for Red, Green, Blue</p>
+        <p>Aplha can also be used to add transparency</p>
+        <pre>
         <code>
     element{
         color: rgb(255, 0, 0);
     }
         </code>
     </pre>
-    <h4>Hsl(a)</h4>
-    <p>Hsl stands for Hue, Saturation, Lightness</p>
-    <p>Aplha can also be used to add transparency</p>
-    <pre>
+        <h4>Hsl(a)</h4>
+        <p>Hsl stands for Hue, Saturation, Lightness</p>
+        <p>Aplha can also be used to add transparency</p>
+        <pre>
         <code>
     element{
         color: hsl(0, 100%, 50%);
     }
         </code>
     </pre>
-    <h4>UI Color Design</h4>
-    <p><i>"If usability and aesthetics conflict, it’s always best to end on the side of usability."</i></p>
-    <ul>
-        <li>Select a dominant brand color and supporting accent colors</li>
-        <li>Use contrast to define sections and differentiate actions</li>
-        <li>Use semantic colors for error and success messages</li>
-        <li>Incorporate default colors for text and backgrounds where needed</li>
-        <li>Neutral colors can provide good contrast</li>
-        <li>Keep users in mind when selecting color</li>
-    </ul>
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
+        <h4>UI Color Design</h4>
+        <p><i>"If usability and aesthetics conflict, it’s always best to end on the side of usability."</i></p>
         <ul>
-            <li><a target="_blank" href="https://color.adobe.com/create/color-wheel">Adobe Color Wheel</a></li>
-            <li><a target="_blank" href="http://colorsafe.co/">Safe Colors</a></li>
-            <li><a target="_blank" href="https://webaim.org/resources/contrastchecker/">WebAim Contrast Checker</a></li>
-            <li><a target="_blank" href="https://www.toptal.com/designers/colorfilter/">Colorblind Web Page Filter</a></li>
-            <li><a target="_blank" href="https://www.verywellmind.com/color-psychology-2795824">Color Psychology</a></li>
-            <li><a target="_blank" href="https://cloudflare.design/color">Cloud Flare</a></li>
+            <li>Select a dominant brand color and supporting accent colors</li>
+            <li>Use contrast to define sections and differentiate actions</li>
+            <li>Use semantic colors for error and success messages</li>
+            <li>Incorporate default colors for text and backgrounds where needed</li>
+            <li>Neutral colors can provide good contrast</li>
+            <li>Keep users in mind when selecting color</li>
         </ul>
-    </aside>
-</section>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank" href="https://color.adobe.com/create/color-wheel">Adobe Color Wheel</a></li>
+                <li><a target="_blank" href="http://colorsafe.co/">Safe Colors</a></li>
+                <li><a target="_blank" href="https://webaim.org/resources/contrastchecker/">WebAim Contrast Checker</a>
+                </li>
+                <li><a target="_blank" href="https://www.toptal.com/designers/colorfilter/">Colorblind Web Page
+                        Filter</a></li>
+                <li><a target="_blank" href="https://www.verywellmind.com/color-psychology-2795824">Color Psychology</a>
+                </li>
+                <li><a target="_blank" href="https://cloudflare.design/color">Cloud Flare</a></li>
+            </ul>
+        </aside>
+    </section>
 
-<section id="fonts">
-    <h3>Fonts</h3>
-    <p>Fonts(typefaces) are used to style text.</p>
+    <section id="fonts">
+        <h3>Fonts</h3>
+        <p>Fonts(typefaces) are used to style text.</p>
 
-    <h4>Ways to import fonts to a project</h4>
-    <p>There are two ways of importing fonts into a project.</p>
+        <h4>Ways to import fonts to a project</h4>
+        <p>There are two ways of importing fonts into a project.</p>
 
-    <h5>Linking fonts in head</h5>
-    <p>You can include fonts by linking them from an external sources in the head element</p>
-    <pre>
+        <h5>Linking fonts in head</h5>
+        <p>You can include fonts by linking them from an external sources in the head element</p>
+        <pre>
         <code>
     &lthead&gt
         &ltlink href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet"&gt
@@ -100,9 +106,9 @@
         </code>
     </pre>
 
-    <h5>Including local fonts</h5>
-    <p>In the stylesheet you can set font styles and link them to local files</p>
-    <pre>
+        <h5>Including local fonts</h5>
+        <p>In the stylesheet you can set font styles and link them to local files</p>
+        <pre>
         <code>
     @font-face{
         font-family: Heebo;
@@ -112,87 +118,91 @@
     }
         </code>
     </pre>
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
-        <ul>
-            <li>
-                <a target="_blank" href="https://www.reliablepsd.com/ultimate-google-font-pairings/">Google Font Pairings</a>
-            </li>
-        </ul>
-    </aside>
-</section>
-
-<section id="cssLinks">
-    <h3>Links</h3>
-    <p>Link styles have four pseudo classes:</p>
-    <ul>
-        <li><code>:link</code> (Matches links that have not yet been visited)</li>
-        <li><code>:visited</code> (Matches links that have been visited)</li>
-        <li><code>:hover</code> (Matches when a user designates an item with a pointing device, for example holding the mouse pointer over it)</li>
-        <li><code>:active</code> (Matches when an item is being activated by the user, for example clicked on)</li>
-    </ul>
-
-    <br>
-    <a href="#cssLink">Test link</a>
-    <br>
-    <br>
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
-        <ul>
-            <li>
-                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">MDN Pseudo-classes</a>
-            </li>
-        </ul>
-    </aside>
-</section>
-
-<section id="cssButtons">
-    <h3>Buttons</h3>
-    <p>Buttons act similarly to links using the same pseudo classes</p>
-    <ul>
-        <li><code>:link</code> (Matches links that have not yet been visited)</li>
-        <li><code>:visited</code> (Matches links that have been visited)</li>
-        <li><code>:hover</code> (Matches when a user designates an item with a pointing device, for example holding the mouse pointer over it)</li>
-        <li><code>:active</code> (Matches when an item is being activated by the user, for example clicked on)</li>
-    </ul>
-    <button>Test Button</button>
-</section>
-
-<section id="boxModel">
-    <h3>Box Model</h3>
-    <p>HTML elements are rendered as a box. With CSS we can manipulate how this box behaves on a site</p>
-    <p>The Box Model consists of these elements:</p>
-    <div>
-        <div>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
             <ul>
-                <li>Content (Height & Width)</li>
-                <li>Padding (Space withing the box)</li>
-                <li>Border (Dividing the outside from the inside)</li>
-                <li>Margin (Space outside the box)</li>
+                <li>
+                    <a target="_blank" href="https://www.reliablepsd.com/ultimate-google-font-pairings/">Google Font
+                        Pairings</a>
+                </li>
             </ul>
-        </div>
-        <div id="BM-boxModel">
-            <div id="BM-margin">
-                <p>Margin</p>
-                <div id="BM-border">
-                    <p>Border</p>
-                    <div id="BM-padding">
-                        <p>Padding</p>
-                        <div id="BM-content">
-                            <p>Content</p>
+        </aside>
+    </section>
 
+    <section id="cssLinks">
+        <h3>Links</h3>
+        <p>Link styles have four pseudo classes:</p>
+        <ul>
+            <li><code>:link</code> (Matches links that have not yet been visited)</li>
+            <li><code>:visited</code> (Matches links that have been visited)</li>
+            <li><code>:hover</code> (Matches when a user designates an item with a pointing device, for example holding
+                the mouse pointer over it)</li>
+            <li><code>:active</code> (Matches when an item is being activated by the user, for example clicked on)</li>
+        </ul>
+
+        <br>
+        <a href="#cssLink">Test link</a>
+        <br>
+        <br>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li>
+                    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">MDN
+                        Pseudo-classes</a>
+                </li>
+            </ul>
+        </aside>
+    </section>
+
+    <section id="cssButtons">
+        <h3>Buttons</h3>
+        <p>Buttons act similarly to links using the same pseudo classes</p>
+        <ul>
+            <li><code>:link</code> (Matches links that have not yet been visited)</li>
+            <li><code>:visited</code> (Matches links that have been visited)</li>
+            <li><code>:hover</code> (Matches when a user designates an item with a pointing device, for example holding
+                the mouse pointer over it)</li>
+            <li><code>:active</code> (Matches when an item is being activated by the user, for example clicked on)</li>
+        </ul>
+        <button>Test Button</button>
+    </section>
+
+    <section id="boxModel">
+        <h3>Box Model</h3>
+        <p>HTML elements are rendered as a box. With CSS we can manipulate how this box behaves on a site</p>
+        <p>The Box Model consists of these elements:</p>
+        <div>
+            <div>
+                <ul>
+                    <li>Content (Height & Width)</li>
+                    <li>Padding (Space withing the box)</li>
+                    <li>Border (Dividing the outside from the inside)</li>
+                    <li>Margin (Space outside the box)</li>
+                </ul>
+            </div>
+            <div id="BM-boxModel">
+                <div id="BM-margin">
+                    <p>Margin</p>
+                    <div id="BM-border">
+                        <p>Border</p>
+                        <div id="BM-padding">
+                            <p>Padding</p>
+                            <div id="BM-content">
+                                <p>Content</p>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <h4>Reset box-model</h4>
-    <p>By default a box with the width of 200px and border with 2px width will render a box of 204px</p>
-    <p>To avoid this we can reset the entire box model and specify a new one: <code>border-box</code></p>
-    <h5>This code results in the width being 322px (default)</h5>
-    <pre>
+        <h4>Reset box-model</h4>
+        <p>By default a box with the width of 200px and border with 2px width will render a box of 204px</p>
+        <p>To avoid this we can reset the entire box model and specify a new one: <code>border-box</code></p>
+        <h5>This code results in the width being 322px (default)</h5>
+        <pre>
         <code>
     * {
         box-sizing: content-box; (default value)
@@ -206,8 +216,8 @@
         }
         </code>
     </pre>
-    <h5>This code results in the width being 300px</h5>
-    <pre>
+        <h5>This code results in the width being 300px</h5>
+        <pre>
         <code>
     * {
         box-sizing: border-box;
@@ -221,12 +231,12 @@
         }
         </code>
     </pre>
-</section>
+    </section>
 
-<section id="margin">
-    <h3>Margin</h3>
-    <p>Shorthands</p>
-    <pre>
+    <section id="margin">
+        <h3>Margin</h3>
+        <p>Shorthands</p>
+        <pre>
         <code>
     margin: Top Right Bottom Left; (Clockwise rotation)
     margin: Top X-axis(Right & Left) Bottom;
@@ -234,22 +244,22 @@
     margin: all-sides;
         </code>
     </pre>
-</section>
+    </section>
 
-<section id="border">
-    <h3>Border</h3>
-    <p>Shorthands</p>
-    <pre>
+    <section id="border">
+        <h3>Border</h3>
+        <p>Shorthands</p>
+        <pre>
         <code>
     border: width style color;
         </code>
     </pre>
-</section>
+    </section>
 
-<section id="padding">
-    <h3>Padding</h3>
-    <p>Shorthands</p>
-    <pre>
+    <section id="padding">
+        <h3>Padding</h3>
+        <p>Shorthands</p>
+        <pre>
         <code>
     padding: Top Right Bottom Left; (Clockwise rotation)
     padding: Top X-axis Bottom;
@@ -257,150 +267,174 @@
     padding: all-sides;
         </code>
     </pre>
-</section>
-
-<section id="flow">
-    <h3>Flow</h3>
-    <p>Flow refers to how elements are being rendered. By default its left to right, top to bottom, in the same order as they exist in the document.</p>
-
-    <section id="position">
-        <h4>Position</h4>
-        <p>There are seven types of position an element can have:</p>
-        <ul>
-            <li><code>static (default)</code></li>
-            <li><code>relative</code></li>
-            <li><code>absolute</code></li>
-            <li><code>fixed</code></li>
-            <li><code>sticky</code></li>
-            <li><code>initial</code></li>
-            <li><code>inherit</code></li>
-        </ul>
-        <h5>Static</h5>
-        <p>Default render.</p>
-        <h5>Relative</h5>
-        <p>Allows you to position the element relative to its default position.</p>
-        <p>Combine relative with <code>top</code> <code>bottom</code> <code>left</code> and <code>right</code> to move the element to an desired location.</p>
-        <h5>Absolute</h5>
-        <p>Makes all other elements ignore given element and act like it's not present on the page.</p>
-        <h5>Fixed</h5>
-        <p>Works like absolute in the sence that other elements will ignore it, but the element will be fixed to a position in the browser.</p>
-        <p>You can scroll and the element will stay on the same location.</p>
     </section>
 
-    <section id="display">
-        <h4>Display</h4>
-        <p>Display dictates if an element can share horizontal space with other elements.</p>
-        <p>The list of available display properties include:</p>
-        <ul>
-            <li><code>inline</code></li>
-            <li><code>block</code></li>
-            <li><code>inline-block</code></li>
-            <li><a href="#flex"><code>inline-flex</code></a></li>
-            <li><a href="#flex"><code>flex</code></a></li>
-        </ul>
-        <h5>Inline</h5>
-        <p>Inline elments have a box wraped tightly around its content, only taking up the space necessary to display their content and not requiring a new line after the each element.</p>
-        <p>Heigth and width can not be set with CSS on <code>inline</code> elements.</p>
-        <p>You can use <code>inline</code> on elements thats not <code>inline</code> by default to make them appear on the same line.</p>
+    <section id="flow">
+        <h3>Flow</h3>
+        <p>Flow refers to how elements are being rendered. By default its left to right, top to bottom, in the same
+            order as they exist in the document.</p>
 
-        <h5>Block</h5>
-        <p>Block elements are not displayed on the same line as other elements.</p>
-        <p>By default its <code>width</code> will fill the entire screen, but <code>width</code> can be set.</p>
-        <p>Unless otherwise specified, they are the <code>height</code> necessary to accommodate their content</p>
+        <section id="position">
+            <h4>Position</h4>
+            <p>There are seven types of position an element can have:</p>
+            <ul>
+                <li><code>static (default)</code></li>
+                <li><code>relative</code></li>
+                <li><code>absolute</code></li>
+                <li><code>fixed</code></li>
+                <li><code>sticky</code></li>
+                <li><code>initial</code></li>
+                <li><code>inherit</code></li>
+            </ul>
+            <h5>Static</h5>
+            <p>Default render.</p>
+            <h5>Relative</h5>
+            <p>Allows you to position the element relative to its default position.</p>
+            <p>Combine relative with <code>top</code> <code>bottom</code> <code>left</code> and <code>right</code> to
+                move the element to an desired location.</p>
+            <h5>Absolute</h5>
+            <p>Makes all other elements ignore given element and act like it's not present on the page.</p>
+            <h5>Fixed</h5>
+            <p>Works like absolute in the sence that other elements will ignore it, but the element will be fixed to a
+                position in the browser.</p>
+            <p>You can scroll and the element will stay on the same location.</p>
+        </section>
 
-        <h5>Inline-Block</h5>
-        <p>Inline-block display combines features of both inline and block elements.</p>
-        <p>Inline-block elements can appear next to each other and we can specify their dimensions using the
-            <code>width</code> and <code>height</code> properties.
-        </p>
-    </section>
+        <section id="display">
+            <h4>Display</h4>
+            <p>Display dictates if an element can share horizontal space with other elements.</p>
+            <p>The list of available display properties include:</p>
+            <ul>
+                <li><code>inline</code></li>
+                <li><code>block</code></li>
+                <li><code>inline-block</code></li>
+                <li><a href="#flex"><code>inline-flex</code></a></li>
+                <li><a href="#flex"><code>flex</code></a></li>
+            </ul>
+            <h5>Inline</h5>
+            <p>Inline elments have a box wraped tightly around its content, only taking up the space necessary to
+                display their content and not requiring a new line after the each element.</p>
+            <p>Heigth and width can not be set with CSS on <code>inline</code> elements.</p>
+            <p>You can use <code>inline</code> on elements thats not <code>inline</code> by default to make them appear
+                on the same line.</p>
 
-    <section id="float">
-        <h4>Float</h4>
-        <p>If you’re simply interested in moving an element as far left or as far right as possible on the page, you can use the <code>float</code> property.</p>
-        <ul>
-            <li>left</li>
-            <li>right</li>
-        </ul>
+            <h5>Block</h5>
+            <p>Block elements are not displayed on the same line as other elements.</p>
+            <p>By default its <code>width</code> will fill the entire screen, but <code>width</code> can be set.</p>
+            <p>Unless otherwise specified, they are the <code>height</code> necessary to accommodate their content</p>
 
-        <h5>Left</h5>
-        <p>Move, or float, elements as far left as possible</p>
+            <h5>Inline-Block</h5>
+            <p>Inline-block display combines features of both inline and block elements.</p>
+            <p>Inline-block elements can appear next to each other and we can specify their dimensions using the
+                <code>width</code> and <code>height</code> properties.
+            </p>
+        </section>
 
-        <h5>Right</h5>
-        <p>move, or float, elements as far right as possible</p>
+        <section id="float">
+            <h4>Float</h4>
+            <p>If you’re simply interested in moving an element as far left or as far right as possible on the page, you
+                can use the <code>float</code> property.</p>
+            <ul>
+                <li>left</li>
+                <li>right</li>
+            </ul>
 
-        <h4>Clear</h4>
-        <p>The <code>clear</code> property specifies how elements should behave when they bump into each other on the page</p>
-        <ul>
-            <li>left</li>
-            <li>right</li>
-            <li>both</li>
-            <li>none</li>
-        </ul>
-        <h5>Left</h5>
-        <p>The left side of the element will not touch any other element within the same containing element.</p>
-        <h5>Right</h5>
-        <p>The right side of the element will not touch any other element within the same containing element.</p>
-        <h5>Both</h5>
-        <p>Neither side of the element will touch any other element within the same containing element.</p>
-        <h5>none</h5>
-        <p>The element can touch either side.</p>
-    </section>
+            <h5>Left</h5>
+            <p>Move, or float, elements as far left as possible</p>
 
-    <section id="flex">
-        <h4>Flexbox</h4>
-        <p>Flexbox is used to position elements on a page. While it's not ment to lay out an entire page, it is useful for positioning elements, whether individually or in groups.</p>
-        <p>There are two main components in flex layout: flex containers and flex items.</p>
-        <pre>
+            <h5>Right</h5>
+            <p>move, or float, elements as far right as possible</p>
+
+            <h4>Clear</h4>
+            <p>The <code>clear</code> property specifies how elements should behave when they bump into each other on
+                the page</p>
+            <ul>
+                <li>left</li>
+                <li>right</li>
+                <li>both</li>
+                <li>none</li>
+            </ul>
+            <h5>Left</h5>
+            <p>The left side of the element will not touch any other element within the same containing element.</p>
+            <h5>Right</h5>
+            <p>The right side of the element will not touch any other element within the same containing element.</p>
+            <h5>Both</h5>
+            <p>Neither side of the element will touch any other element within the same containing element.</p>
+            <h5>none</h5>
+            <p>The element can touch either side.</p>
+        </section>
+
+        <section id="flex">
+            <h4>Flexbox</h4>
+            <p>Flexbox is used to position elements on a page. While it's not ment to lay out an entire page, it is
+                useful for positioning elements, whether individually or in groups.</p>
+            <p>There are two main components in flex layout: flex containers and flex items.</p>
+            <pre>
             <code>
     div .container {
         display: flex;
     }
             </code>
         </pre>
-        <p>In the example above, all divs with the class container are flex <code>containers</code>. If they have children, the children are flex items. A div with the declaration <code>display: flex;</code> will remain block level — no other elements will appear on the same line as it.</p>
-        <h5>Container: Flex vs Inline-flex</h5>
-        <p>To designate an element as a flex container, set the element’s <code>display</code> property to <code>flex</code> or <code>inline-flex</code>. Once an item is a flex container, there are several properties we can use to specify how its children behave.</p>
-        <p>Giving a container the <code>display: flex;</code> property makes it an block element. If we want it to behave as an inline element we give it the <code>display: inline-flex;</code> property.</p>
-        
-        <p>Some flex properties are:</p>
-        <ul>
-            <li><code>justify-content</code></li>
-            <li><code>align-items</code></li>
-            <li><code>flex-grow</code></li>
-            <li><code>flex-shrink</code></li>
-            <li><code>flex-basis</code></li>
-            <li><code>flex</code></li>
-            <li><code>flex-wrap</code></li>
-            <li><code>align-content</code></li>
-            <li><code>flex-direction</code></li>
-            <li><code>flex-flow</code></li>
-        </ul>
-        <h5>Justify-content (horizontal)</h5>
-        <p>There are five values for the <code>justify-content</code> property</p>
-        <ul>
-            <li><code>flex-start</code> all items will be positioned in order, starting from the left of the parent container, with no extra space between or before them.</li>
-            <li><code>flex-end</code> all items will be positioned in order, with the last item starting on the right side of the parent container, with no extra space between or after them.</li>
-            <li><code>center</code> all items will be positioned in order, in the center of the parent container with no extra space before, between, or after them.</li>
-            <li><code>space-around</code> items will be positioned with equal space before and after each item, resulting in double the space between elements.</li>
-            <li><code>space-between</code> items will be positioned with equal space between them, but no extra space before the first or after the last elements.</li>
-        </ul>
-        <h5>Align-items (vertical)</h5>
-        <p>There are five values we can use for the <code>align-items</code> property:</p>
-        <ul>
-            <li><code>flex-start</code> all elements will be positioned at the top of the parent container.</li>
-            <li><code>flex-end</code> all elements will be positioned at the bottom of the parent container.</li>
-            <li><code>center</code> the center of all elements will be positioned halfway between the top and bottom of the parent container.</li>
-            <li><code>baseline</code> the bottom of the content of all items will be aligned with each other.</li>
-            <li><code>stretch</code> if possible, the items will stretch from top to bottom of the container (this is the default value; elements with a specified height will not stretch; elements with a minimum height or no height specified will stretch).</li>
-        </ul>
-        <h5>Flex-grow</h5>
-        <p>The <code>flex-grow</code> property allows us to specify if items should grow to fill a container and also which items should grow proportionally more or less than others.</p>
-        <h5>Flex-shrink</h5>
-        <p>Just as the <code>flex-grow</code> property proportionally stretches flex items, the <code>flex-shrink</code> property can be used to specify which elements will shrink and in what proportions.</p>
-        <h5>Flex-basis</h5>
-        <p><code>flex-basis</code> allows us to specify the width of an item before it stretches or shrinks.</p>
-        <pre>
+            <p>In the example above, all divs with the class container are flex <code>containers</code>. If they have
+                children, the children are flex items. A div with the declaration <code>display: flex;</code> will
+                remain block level — no other elements will appear on the same line as it.</p>
+            <h5>Container: Flex vs Inline-flex</h5>
+            <p>To designate an element as a flex container, set the element’s <code>display</code> property to
+                <code>flex</code> or <code>inline-flex</code>. Once an item is a flex container, there are several
+                properties we can use to specify how its children behave.</p>
+            <p>Giving a container the <code>display: flex;</code> property makes it an block element. If we want it to
+                behave as an inline element we give it the <code>display: inline-flex;</code> property.</p>
+
+            <p>Some flex properties are:</p>
+            <ul>
+                <li><code>justify-content</code></li>
+                <li><code>align-items</code></li>
+                <li><code>flex-grow</code></li>
+                <li><code>flex-shrink</code></li>
+                <li><code>flex-basis</code></li>
+                <li><code>flex</code></li>
+                <li><code>flex-wrap</code></li>
+                <li><code>align-content</code></li>
+                <li><code>flex-direction</code></li>
+                <li><code>flex-flow</code></li>
+            </ul>
+            <h5>Justify-content (horizontal)</h5>
+            <p>There are five values for the <code>justify-content</code> property</p>
+            <ul>
+                <li><code>flex-start</code> all items will be positioned in order, starting from the left of the parent
+                    container, with no extra space between or before them.</li>
+                <li><code>flex-end</code> all items will be positioned in order, with the last item starting on the
+                    right side of the parent container, with no extra space between or after them.</li>
+                <li><code>center</code> all items will be positioned in order, in the center of the parent container
+                    with no extra space before, between, or after them.</li>
+                <li><code>space-around</code> items will be positioned with equal space before and after each item,
+                    resulting in double the space between elements.</li>
+                <li><code>space-between</code> items will be positioned with equal space between them, but no extra
+                    space before the first or after the last elements.</li>
+            </ul>
+            <h5>Align-items (vertical)</h5>
+            <p>There are five values we can use for the <code>align-items</code> property:</p>
+            <ul>
+                <li><code>flex-start</code> all elements will be positioned at the top of the parent container.</li>
+                <li><code>flex-end</code> all elements will be positioned at the bottom of the parent container.</li>
+                <li><code>center</code> the center of all elements will be positioned halfway between the top and bottom
+                    of the parent container.</li>
+                <li><code>baseline</code> the bottom of the content of all items will be aligned with each other.</li>
+                <li><code>stretch</code> if possible, the items will stretch from top to bottom of the container (this
+                    is the default value; elements with a specified height will not stretch; elements with a minimum
+                    height or no height specified will stretch).</li>
+            </ul>
+            <h5>Flex-grow</h5>
+            <p>The <code>flex-grow</code> property allows us to specify if items should grow to fill a container and
+                also which items should grow proportionally more or less than others.</p>
+            <h5>Flex-shrink</h5>
+            <p>Just as the <code>flex-grow</code> property proportionally stretches flex items, the
+                <code>flex-shrink</code> property can be used to specify which elements will shrink and in what
+                proportions.</p>
+            <h5>Flex-basis</h5>
+            <p><code>flex-basis</code> allows us to specify the width of an item before it stretches or shrinks.</p>
+            <pre>
             <code>
     .container {
         display: flex;
@@ -417,11 +451,16 @@
     }
             </code>
         </pre>
-        <p>In the example above, the <code>.side</code> divs will be 100 pixels wide and the <code>.center</code> div will be 150 pixels wide if the <code>.container</code> div has just the right amount of space (350 pixels, plus a little extra for margins and borders).</p>
-        <h5>Flex</h5>
-        <p>The <code>flex</code> property provides a convenient way for specifying how elements stretch and shrink, while simplifying the CSS required. The <code>flex</code> property allows you to declare <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis </code> all in one line.</p>
-        <p><strong>Note:</strong> The <code>flex</code> property is different from the <code>flex</code> value used for the <code>display</code> property.</p>
-        <pre>
+            <p>In the example above, the <code>.side</code> divs will be 100 pixels wide and the <code>.center</code>
+                div will be 150 pixels wide if the <code>.container</code> div has just the right amount of space (350
+                pixels, plus a little extra for margins and borders).</p>
+            <h5>Flex</h5>
+            <p>The <code>flex</code> property provides a convenient way for specifying how elements stretch and shrink,
+                while simplifying the CSS required. The <code>flex</code> property allows you to declare
+                <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis </code> all in one line.</p>
+            <p><strong>Note:</strong> The <code>flex</code> property is different from the <code>flex</code> value used
+                for the <code>display</code> property.</p>
+            <pre>
             <code>
     .big {
         flex-grow: 2;
@@ -436,7 +475,7 @@
     }
             </code>
         </pre>
-        <pre>
+            <pre>
             <code>
     .big {
         flex: 2 1 150px;
@@ -447,48 +486,68 @@
     }
             </code>
         </pre>
-        <h5>Flex-wrap</h5>
-        <p>Sometimes, we don’t want our content to shrink to fit its container. Instead, we might want flex items to move to the next line when necessary. This can be declared with the <code>flex-wrap</code> property. The <code>flex-wrap</code> property can accept three values:</p>
-        <ul>
-            <li><code>wrap</code> child elements of a flex container that don’t fit into a row will move down to the next line</li>
-            <li><code>wrap-reverse</code> the same functionality as <code>wrap</code>, but the order of rows within a flex container is reversed (for example, in a 2-row flexbox, the first row from a <code>wrap</code> container will become the second in <code>wrap-reverse</code> and the second row from the <code>wrap</code> container will become the first in <code>wrap-reverse</code>)</li>
-            <li><code>nowrap</code></li>
-        </ul>
-        <h5>Align-content</h5>
-        <p>If a flex container has multiple rows of content, we can use <code>align-content</code> to space the rows from top to bottom.</p>
-        <p><code>align-content</code> accepts six values:</p>
-        <ul>
-            <li><code>flex-start</code> all rows of elements will be positioned at the top of the parent container with no extra space between.</li>
-            <li><code>flex-end</code> all rows of elements will be positioned at the bottom of the parent container with no extra space between.</li>
-            <li><code>center</code>  all rows of elements will be positioned at the center of the parent element with no extra space between.</li>
-            <li><code>space-between</code> all rows of elements will be spaced evenly from the top to the bottom of the container with no space above the first or below the last.</li>
-            <li><code>space-around</code>  all rows of elements will be spaced evenly from the top to the bottom of the container with the same amount of space at the top and bottom and between each element.</li>
-            <li><code>stretch</code> if a minimum height or no height is specified, the rows of elements will stretch to fill the parent container from top to bottom (default value).</li>
-        </ul>
-        <h5>Flex-direction</h5>
-        <p>The main axis(horizontal) is used to position flex items with the following properties:</p>
-        <ul>
-            <li><code>justify-content</code></li>
-            <li><code>flex-wrap</code></li>
-            <li><code>flex-grow</code></li>
-            <li><code>flex-shrink</code></li>
-        </ul>
-        <p>The cross axis(vertical) is used to position flex items with the following properties:</p>
-        <ul>
-            <li>align-items</li>
-            <li>align-content</li>
-        </ul>
-        <p>The main axis and cross axis are interchangeable. We can switch them using the<code>flex-direction</code> property. If we add the<code>flex-direction</code> property and give it a value of <code>column</code>, the flex items will be ordered vertically, not horizontally.</p>
-        <p>The flex-direction property can accept four values:</p>
-        <ul>
-            <li><code>row</code> elements will be positioned from left to right across the parent element starting from the top left corner (default).</li>
-            <li><code>row-reverse</code> elements will be positioned from right to left across the parent element starting from the top right corner.</li>
-            <li><code>column</code> elements will be positioned from top to bottom of the parent element starting from the top left corner.</li>
-            <li><code>column-reverse</code> elements will be positioned from the bottom to the top of the parent element starting from the bottom left corner.</li>
-        </ul>
-        <h5>Flex-flow</h5>
-        <p>Like the <code>flex</code> property, the <code>flex-flow</code> property is used to declare both the <code>flex-wrap</code> and <code>flex-direction</code> properties in one line.</p>
-        <pre>
+            <h5>Flex-wrap</h5>
+            <p>Sometimes, we don’t want our content to shrink to fit its container. Instead, we might want flex items to
+                move to the next line when necessary. This can be declared with the <code>flex-wrap</code> property. The
+                <code>flex-wrap</code> property can accept three values:</p>
+            <ul>
+                <li><code>wrap</code> child elements of a flex container that don’t fit into a row will move down to the
+                    next line</li>
+                <li><code>wrap-reverse</code> the same functionality as <code>wrap</code>, but the order of rows within
+                    a flex container is reversed (for example, in a 2-row flexbox, the first row from a
+                    <code>wrap</code> container will become the second in <code>wrap-reverse</code> and the second row
+                    from the <code>wrap</code> container will become the first in <code>wrap-reverse</code>)</li>
+                <li><code>nowrap</code></li>
+            </ul>
+            <h5>Align-content</h5>
+            <p>If a flex container has multiple rows of content, we can use <code>align-content</code> to space the rows
+                from top to bottom.</p>
+            <p><code>align-content</code> accepts six values:</p>
+            <ul>
+                <li><code>flex-start</code> all rows of elements will be positioned at the top of the parent container
+                    with no extra space between.</li>
+                <li><code>flex-end</code> all rows of elements will be positioned at the bottom of the parent container
+                    with no extra space between.</li>
+                <li><code>center</code> all rows of elements will be positioned at the center of the parent element with
+                    no extra space between.</li>
+                <li><code>space-between</code> all rows of elements will be spaced evenly from the top to the bottom of
+                    the container with no space above the first or below the last.</li>
+                <li><code>space-around</code> all rows of elements will be spaced evenly from the top to the bottom of
+                    the container with the same amount of space at the top and bottom and between each element.</li>
+                <li><code>stretch</code> if a minimum height or no height is specified, the rows of elements will
+                    stretch to fill the parent container from top to bottom (default value).</li>
+            </ul>
+            <h5>Flex-direction</h5>
+            <p>The main axis(horizontal) is used to position flex items with the following properties:</p>
+            <ul>
+                <li><code>justify-content</code></li>
+                <li><code>flex-wrap</code></li>
+                <li><code>flex-grow</code></li>
+                <li><code>flex-shrink</code></li>
+            </ul>
+            <p>The cross axis(vertical) is used to position flex items with the following properties:</p>
+            <ul>
+                <li>align-items</li>
+                <li>align-content</li>
+            </ul>
+            <p>The main axis and cross axis are interchangeable. We can switch them using the<code>flex-direction</code>
+                property. If we add the<code>flex-direction</code> property and give it a value of <code>column</code>,
+                the flex items will be ordered vertically, not horizontally.</p>
+            <p>The flex-direction property can accept four values:</p>
+            <ul>
+                <li><code>row</code> elements will be positioned from left to right across the parent element starting
+                    from the top left corner (default).</li>
+                <li><code>row-reverse</code> elements will be positioned from right to left across the parent element
+                    starting from the top right corner.</li>
+                <li><code>column</code> elements will be positioned from top to bottom of the parent element starting
+                    from the top left corner.</li>
+                <li><code>column-reverse</code> elements will be positioned from the bottom to the top of the parent
+                    element starting from the bottom left corner.</li>
+            </ul>
+            <h5>Flex-flow</h5>
+            <p>Like the <code>flex</code> property, the <code>flex-flow</code> property is used to declare both the
+                <code>flex-wrap</code> and <code>flex-direction</code> properties in one line.</p>
+            <pre>
             <code>
     .container {
         display: flex;
@@ -497,7 +556,7 @@
     }
             </code>
         </pre>
-        <pre>
+            <pre>
             <code>
     .container {
         display: flex;
@@ -505,81 +564,98 @@
     }
             </code>
         </pre>
+        </section>
+
+        <section id="grid">
+            <h4>Grids</h4>
+            <p>Fill this section out soon please.</p>
+        </section>
+
+
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li>
+                    <a target="_blank" href="https://www.w3schools.com/cssref/pr_class_position.asp">w3schools
+                        Position</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.w3schools.com/cssref/pr_class_display.asp">w3schools
+                        Display</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.w3schools.com/cssref/pr_class_float.asp">w3schools Float</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">MDN
+                        Inline elements</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide
+                        to Grid</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://css-tricks.com/things-ive-learned-css-grid-layout/">Things I've
+                        Learned About Css Grid Layout</a>
+                </li>
+            </ul>
+        </aside>
     </section>
 
-    <section id="grid">
-        <h4>Grids</h4>
-        <p>Fill this section out soon please.</p>
-    </section>
-
-
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
+    <section id="shadow">
+        <h3>Shadow</h3>
+        <p>Boi u kno what a shadow is</p>
+        <p>There are two types of shadow in css:</p>
         <ul>
-            <li>
-                <a target="_blank" href="https://www.w3schools.com/cssref/pr_class_position.asp">w3schools Position</a>
-            </li>
-            <li>
-                <a target="_blank" href="https://www.w3schools.com/cssref/pr_class_display.asp">w3schools Display</a>
-            </li>
-            <li>
-                <a target="_blank" href="https://www.w3schools.com/cssref/pr_class_float.asp">w3schools Float</a>
-            </li>
-            <li>
-                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements">MDN Inline elements</a>
-            </li>
-            <li>
-                <a target="_blank" href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide to Grid</a>
-            </li>
-            <li>
-                <a target="_blank" href="https://css-tricks.com/things-ive-learned-css-grid-layout/">Things I've Learned About Css Grid Layout</a>
-            </li>
+            <li><code>text-shadow</code></li>
+            <li><code>box-shadow</code></li>
         </ul>
-    </aside>
-</section>
-
-<section id="shadow">
-    <h3>Shadow</h3>
-    <p>Boi u kno what a shadow is</p>
-    <p>There are two types of shadow in css:</p>
-    <ul>
-        <li><code>text-shadow</code></li>
-        <li><code>box-shadow</code></li>
-    </ul>
-</section>
-
-<section id="cssResponsive">
-    <h3>Responsive CSS</h3>
-    <p>CSS have several great ways of making the design of a site responsive</p>
-
-    <section id="units">
-        <h4>Units</h4>
-    <p>Theese are the units you can use to size elements in your design:</p>
-    <ul>
-        <li><code>px</code></li>
-        <li><code>em</code></li>
-        <li><code>rem</code></li>
-        <li><code>%</code> Percentages</li>
-    </ul>
-
-    <h5>Pixels</h5>
-    <p>Pixels are used to to size content to exact dimentions. Pixels are fixed, hard coded values</p>
-    <h5>Em</h5>
-    <p>Em represents the font-size of the current element or the default base font-size set by the browser if none is given. For example, if the base font of a browser is 16 pixels (which is normally the default size of text in a browser), then 1 em is equal to 16 pixels. 2 ems would equal 32 pixels, and so on.</p>
-    <h5>Rem</h5>
-    <p>Rem stands for root em. It acts similar to em, but instead of checking parent elements to size font, it checks the root element. The root element is the <code>&lthtml&gt</code> tag.</p>
-    <p>Most browsers set the font size of <code>&lthtml&gt</code> to 16 pixels, so by default rem measurements will be compared to that value. To set a different font size for the root element, you can add a CSS rule.</p>
-    <p><strong>Note:</strong> When using relative sizing, ems and rems should be used to size text and dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, percentages should be used.</p>
-    <h5>Percentages</h5>
-    <p>To size non-text HTML elements relative to their parent elements on the page you can use percentages.</p>
-    <p>Percentages are often used to size box-model values, like width and height, padding, border, and margins. They can also be used to set positioning properties (top, bottom, left, right).</p>
-    <p><strong>Note:</strong> Because the box model includes padding, borders, and margins, setting an element’s width to 100% may cause content to overflow its parent container. While tempting, 100% should only be used when content will not have padding, border, or margin</p>
     </section>
 
-    <section id="mediaQueries">
-        <h4>Media Queries</h4>
-        <p>CSS uses media queries to adapt a website’s content to different screen sizes. With media queries, CSS can detect the size of the current screen and apply different CSS styles depending on the width of the screen.</p>
-        <pre>
+    <section id="cssResponsive">
+        <h3>Responsive CSS</h3>
+        <p>CSS have several great ways of making the design of a site responsive</p>
+
+        <section id="units">
+            <h4>Units</h4>
+            <p>Theese are the units you can use to size elements in your design:</p>
+            <ul>
+                <li><code>px</code></li>
+                <li><code>em</code></li>
+                <li><code>rem</code></li>
+                <li><code>%</code> Percentages</li>
+            </ul>
+
+            <h5>Pixels</h5>
+            <p>Pixels are used to to size content to exact dimentions. Pixels are fixed, hard coded values</p>
+            <h5>Em</h5>
+            <p>Em represents the font-size of the current element or the default base font-size set by the browser if
+                none is given. For example, if the base font of a browser is 16 pixels (which is normally the default
+                size of text in a browser), then 1 em is equal to 16 pixels. 2 ems would equal 32 pixels, and so on.</p>
+            <h5>Rem</h5>
+            <p>Rem stands for root em. It acts similar to em, but instead of checking parent elements to size font, it
+                checks the root element. The root element is the <code>&lthtml&gt</code> tag.</p>
+            <p>Most browsers set the font size of <code>&lthtml&gt</code> to 16 pixels, so by default rem measurements
+                will be compared to that value. To set a different font size for the root element, you can add a CSS
+                rule.</p>
+            <p><strong>Note:</strong> When using relative sizing, ems and rems should be used to size text and
+                dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout
+                based on text size. Otherwise, percentages should be used.</p>
+            <h5>Percentages</h5>
+            <p>To size non-text HTML elements relative to their parent elements on the page you can use percentages.</p>
+            <p>Percentages are often used to size box-model values, like width and height, padding, border, and margins.
+                They can also be used to set positioning properties (top, bottom, left, right).</p>
+            <p><strong>Note:</strong> Because the box model includes padding, borders, and margins, setting an element’s
+                width to 100% may cause content to overflow its parent container. While tempting, 100% should only be
+                used when content will not have padding, border, or margin</p>
+        </section>
+
+        <section id="mediaQueries">
+            <h4>Media Queries</h4>
+            <p>CSS uses media queries to adapt a website’s content to different screen sizes. With media queries, CSS
+                can detect the size of the current screen and apply different CSS styles depending on the width of the
+                screen.</p>
+            <pre>
             <code>
     @media only screen and (max-width: 480px) {
         /* ruleset for &lt= 480px */
@@ -589,45 +665,61 @@
     }
             </code>
         </pre>
-        <p>The example above demonstrates how a media query is applied. The media query defines a rule for screens smaller than 480 pixels (approximately the width of many smartphones in landscape orientation).</p>
-        <ol>
-            <li>
-                <p><code>@media</code> This keyword begins a media query rule and instructs the CSS compiler on how to parse the rest of the rule.</p>
-            </li>
-            <li>
-                <p><code>only screen</code> Indicates what types of devices should use this rule. In early attempts to target different devices, CSS incorporated different media types (screen, print, handheld). The rationale was that by knowing the media type, the proper CSS rules could be applied. However, “handheld” and “screen” devices began to occupy a much wider range of sizes and having only one CSS rule per media device was not sufficient. screen is the media type always used for displaying content, no matter the type of device. The only keyword is added to indicate that this rule only applies to one media type (screen).</p>
-            </li>
-            <li>
-                <p><code>(max-width : 480px)</code> This part of the rule is called a media feature, and instructs the CSS compiler to apply the CSS styles to devices with a width of 480 pixels or smaller. Media features are the conditions that must be met in order to render the CSS within a media query.</p>
-            </li>
-            <li>
-                <p>CSS rules are nested inside of the media query’s curly braces. The rules will be applied when the media query is met. In the example above, the text in the <code>body</code> element is set to a <code>font-size</code> of <code>12px   </code> when the user’s screen is less than <code>480px</code>.</p>
-            </li>
-        </ol>
-        <h5>Max-width vs Min-width</h5>
-        <ul>
-            <li>
-                <p>If the media query is set with a <code>max-width</code> it means that the query will only apply if the screen is less than <code>max-width</code>.</p>
-            </li>
-        <p><code>(max-width: 480px)</code> will apply the css if the screen is less than 480px</p>
-        <li>
-            <p>If the media query is set with a <code>min-width</code> it means that the query will only apply if the screen is larger than <code>min-width</code>.</p>
-        </li>
-        <p><code>(min-width: 480px)</code> will apply the css if the screen is larger than 480px</p>
-        <p>Always use <code>max-width</code> and style elements on smaller screens.</p>
-        </ul>
+            <p>The example above demonstrates how a media query is applied. The media query defines a rule for screens
+                smaller than 480 pixels (approximately the width of many smartphones in landscape orientation).</p>
+            <ol>
+                <li>
+                    <p><code>@media</code> This keyword begins a media query rule and instructs the CSS compiler on how
+                        to parse the rest of the rule.</p>
+                </li>
+                <li>
+                    <p><code>only screen</code> Indicates what types of devices should use this rule. In early attempts
+                        to target different devices, CSS incorporated different media types (screen, print, handheld).
+                        The rationale was that by knowing the media type, the proper CSS rules could be applied.
+                        However, “handheld” and “screen” devices began to occupy a much wider range of sizes and having
+                        only one CSS rule per media device was not sufficient. screen is the media type always used for
+                        displaying content, no matter the type of device. The only keyword is added to indicate that
+                        this rule only applies to one media type (screen).</p>
+                </li>
+                <li>
+                    <p><code>(max-width : 480px)</code> This part of the rule is called a media feature, and instructs
+                        the CSS compiler to apply the CSS styles to devices with a width of 480 pixels or smaller. Media
+                        features are the conditions that must be met in order to render the CSS within a media query.
+                    </p>
+                </li>
+                <li>
+                    <p>CSS rules are nested inside of the media query’s curly braces. The rules will be applied when the
+                        media query is met. In the example above, the text in the <code>body</code> element is set to a
+                        <code>font-size</code> of <code>12px   </code> when the user’s screen is less than
+                        <code>480px</code>.</p>
+                </li>
+            </ol>
+            <h5>Max-width vs Min-width</h5>
+            <ul>
+                <li>
+                    <p>If the media query is set with a <code>max-width</code> it means that the query will only apply
+                        if the screen is less than <code>max-width</code>.</p>
+                </li>
+                <p><code>(max-width: 480px)</code> will apply the css if the screen is less than 480px</p>
+                <li>
+                    <p>If the media query is set with a <code>min-width</code> it means that the query will only apply
+                        if the screen is larger than <code>min-width</code>.</p>
+                </li>
+                <p><code>(min-width: 480px)</code> will apply the css if the screen is larger than 480px</p>
+                <p>Always use <code>max-width</code> and style elements on smaller screens.</p>
+            </ul>
 
-        <h5>Range</h5>
-        <p>Specific screen sizes can be targeted by setting multiple width and height media features.</p>
-        <pre>
+            <h5>Range</h5>
+            <p>Specific screen sizes can be targeted by setting multiple width and height media features.</p>
+            <pre>
             <code>
     @media only screen and (min-width: 320px) and (max-width: 480px) {
         /* ruleset for 320px - 480px */
     }
             </code>
         </pre>
-        <p>The example above can be written using two separate rules as well:</p>
-        <pre>
+            <p>The example above can be written using two separate rules as well:</p>
+            <pre>
             <code>
     @media only screen and (min-width: 320px) { 
         /* ruleset for >= 320px */
@@ -639,11 +731,15 @@
     }
             </code>
         </pre>
-        <p>The first media query in the example above will apply CSS rules when the size of the screen meets or exceeds 320 pixels. The second media query will then apply CSS rules when the size of the screen meets or exceeds 480 pixels, meaning that it can override CSS rules present in the first media query or apply additional CSS rules that are not already present in the first.</p>
+            <p>The first media query in the example above will apply CSS rules when the size of the screen meets or
+                exceeds 320 pixels. The second media query will then apply CSS rules when the size of the screen meets
+                or exceeds 480 pixels, meaning that it can override CSS rules present in the first media query or apply
+                additional CSS rules that are not already present in the first.</p>
 
-        <h5>Dots Per Inch</h5>
-        <p>To target by resolution, we can use the <code>min-resolution</code> and <code>max-resolution</code> media features.</p>
-        <pre>
+            <h5>Dots Per Inch</h5>
+            <p>To target by resolution, we can use the <code>min-resolution</code> and <code>max-resolution</code> media
+                features.</p>
+            <pre>
             <code>
     @media only screen and (min-resolution: 300dpi) {
         /* CSS for high resolution screens */
@@ -651,10 +747,11 @@
             </code>
         </pre>
 
-        <h5>And Operator</h5>
-        <p>We can use the <code>and</code> operator to require multiple media features.</p>
-        <p>By placing the <code>and</code> operator between features, the browser will require combined media queries to be true before rendering the CSS withing the media query.</p>
-        <pre>
+            <h5>And Operator</h5>
+            <p>We can use the <code>and</code> operator to require multiple media features.</p>
+            <p>By placing the <code>and</code> operator between features, the browser will require combined media
+                queries to be true before rendering the CSS withing the media query.</p>
+            <pre>
             <code>
     @media only screen and (max-width: 480px) and (min-resolution: 300dpi) {
         /* CSS ruleset */
@@ -662,14 +759,14 @@
             </code>
         </pre>
 
-        <h5>Comma Separated List</h5>
-        <p>If only one media feature in a media query needs to be met we can use commas.</p>
-        <p>For example, if we needed to apply a style when only one of the below is true:</p>
-        <ul>
-            <li>The screen is more than 480 pixels wide</li>
-            <li>The screen is in landscape mode</li>
-        </ul>
-        <pre>
+            <h5>Comma Separated List</h5>
+            <p>If only one media feature in a media query needs to be met we can use commas.</p>
+            <p>For example, if we needed to apply a style when only one of the below is true:</p>
+            <ul>
+                <li>The screen is more than 480 pixels wide</li>
+                <li>The screen is in landscape mode</li>
+            </ul>
+            <pre>
             <code>
     @media only screen and (min-width: 480px), (orientation: landscape) {
         /* CSS ruleset */
@@ -677,21 +774,26 @@
             </code>
         </pre>
 
-        <h5>Orientation</h5>
-        <p>The orientation media feature detects if the page have more width than height.</p>
-        <p>If a page is wider, it’s considered <code>landscape</code>, and if a page is taller, it’s considered <code>portrait</code>.</p>
+            <h5>Orientation</h5>
+            <p>The orientation media feature detects if the page have more width than height.</p>
+            <p>If a page is wider, it’s considered <code>landscape</code>, and if a page is taller, it’s considered
+                <code>portrait</code>.</p>
+        </section>
+
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li>
+                    <a target="_blank"
+                        href="https://content.codecademy.com/courses/freelance-1/unit-5/screen-sizes.png">Breakpoints</a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="https://developers.google.com/web/tools/chrome-devtools/device-mode">Simulate Mobile
+                        Devices with Device Mode in Chrome DevTools</a>
+                </li>
+            </ul>
+        </aside>
+
     </section>
-
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
-        <ul>
-            <li>
-                <a target="_blank" href="https://content.codecademy.com/courses/freelance-1/unit-5/screen-sizes.png">Breakpoints</a>
-            </li>
-            <li>
-                <a target="_blank" href="https://developers.google.com/web/tools/chrome-devtools/device-mode">Simulate Mobile Devices with Device Mode in Chrome DevTools</a>
-            </li>
-        </ul>
-    </aside>
-
 </section>

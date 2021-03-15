@@ -1,95 +1,101 @@
-<h2>HTML 🧱</h2>
+<section style="margin-top: 0;">
+    <h2>HTML 🧱</h2>
 
-<section id="whatIsHtml">
-    <h3>What is HTML?</h3>
-    <p>HTML is the structure of a site.</p>
+    <section id="whatIsHtml">
+        <h3>What is HTML?</h3>
+        <p>HTML is the structure of a site.</p>
 
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN HTML
+                        Documentation</a></li>
+            </ul>
+        </aside>
+    </section>
+
+    <section id="semantics">
+        <h3>Semantics</h3>
+        <p>
+            Semantics is important for accessibility and SEO. <br> It allows us to structure the site in a way thats
+            understandable for both page-readers and developers.
+        </p>
+        <h4>Semantic elements inlcudes:</h4>
         <ul>
-            <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN HTML Documentation</a></li>
+            <li>&ltHeader&gt</li>
+            <li>&ltNav&gt</li>
+            <li>&ltMain&gt</li>
+            <li>&ltArticle&gt</li>
+            <li>&ltSection&gt</li>
+            <li>&ltAside&gt</li>
+            <li>&ltDetails&gt</li>
+            <li>&ltFigure&gt</li>
+            <li>&ltFigcaption&gt</li>
+            <li>&ltMark&gt</li>
+            <li>&ltSummary&gt</li>
+            <li>&ltTime&gt</li>
+            <li>&ltFooter&gt</li>
         </ul>
-    </aside>
-</section>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li>
+                    <a target="_blank" href="https://www.internetingishard.com/html-and-css/semantic-html/">Semantic
+                        HTML</a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="https://medium.com/alistapart/writing-html-with-accessibility-in-mind-a62026493412">Writing
+                        HTML with accessibility in mind</a>
+                </li>
+            </ul>
+        </aside>
+    </section>
 
-<section id="semantics">
-    <h3>Semantics</h3>
-    <p>
-        Semantics is important for accessibility and SEO. <br> It allows us to structure the site in a way thats understandable for both page-readers and developers.
-    </p>
-    <h4>Semantic elements inlcudes:</h4>
-    <ul>
-        <li>&ltHeader&gt</li>
-        <li>&ltNav&gt</li>
-        <li>&ltMain&gt</li>
-        <li>&ltArticle&gt</li>
-        <li>&ltSection&gt</li>
-        <li>&ltAside&gt</li>
-        <li>&ltDetails&gt</li>
-        <li>&ltFigure&gt</li>
-        <li>&ltFigcaption&gt</li>
-        <li>&ltMark&gt</li>
-        <li>&ltSummary&gt</li>
-        <li>&ltTime&gt</li>
-        <li>&ltFooter&gt</li>
-    </ul>
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
+    <section id="links">
+        <h3>Links</h3>
+        <p>Links are what enables a user of a website to browse trough different pages on a site.</p>
+        <p>Or links can be used to go to other sites.</p>
+        <p><code>&lta href="url"&gtlink test&lt/a&gt</code></p>
+        <h4>Attributes:</h4>
         <ul>
-            <li>
-                <a target="_blank" href="https://www.internetingishard.com/html-and-css/semantic-html/">Semantic HTML</a>
-            </li>
-            <li>
-                <a target="_blank" href="https://medium.com/alistapart/writing-html-with-accessibility-in-mind-a62026493412">Writing HTML with accessibility in mind</a>
-            </li>
+            <li><code>href</code> (url to source)</li>
+            <li><code>target</code> (how to open source)</li>
+            <li><code>alt</code> (alternative text)</li>
+            <li><code>title</code> (extra infromation)</li>
         </ul>
-    </aside>
-</section>
+        <h5>Target</h5>
+        <p>There are four types of target attributes for a link:</p>
+        <ul>
+            <li><code>_self</code> (Default. Opens the document in the same window/tab as it was clicked)</li>
+            <li><code>_blank</code> (Opens the document in a new window or tab)</li>
+            <li><code>_parent</code> (Opens the document in the parent frame)</li>
+            <li><code>_top</code> (Opens the document in the full body of the window)</li>
+        </ul>
+    </section>
 
-<section id="links">
-    <h3>Links</h3>
-    <p>Links are what enables a user of a website to browse trough different pages on a site.</p>
-    <p>Or links can be used to go to other sites.</p>
-    <p><code>&lta href="url"&gtlink test&lt/a&gt</code></p>
-    <h4>Attributes:</h4>
-    <ul>
-        <li><code>href</code> (url to source)</li>
-        <li><code>target</code> (how to open source)</li>
-        <li><code>alt</code> (alternative text)</li>
-        <li><code>title</code> (extra infromation)</li>
-    </ul>
-    <h5>Target</h5>
-    <p>There are four types of target attributes for a link:</p>
-    <ul>
-        <li><code>_self</code> (Default. Opens the document in the same window/tab as it was clicked)</li>
-        <li><code>_blank</code> (Opens the document in a new window or tab)</li>
-        <li><code>_parent</code> (Opens the document in the parent frame)</li>
-        <li><code>_top</code> (Opens the document in the full body of the window)</li>
-    </ul>
-</section>
+    <section id="lists">
+        <h3>Lists</h3>
+        <p>HTML lists allow web developers to group a set of related items in lists.</p>
 
-<section id="lists">
-    <h3>Lists</h3>
-    <p>HTML lists allow web developers to group a set of related items in lists.</p>
+        <h4>List types</h4>
+        <p>There are three types of lists in HTML:</p>
+        <ul>
+            <li>Unordered lists (Like this)</li>
+            <li>Ordered lists</li>
+            <li>Description lists</li>
+        </ul>
 
-    <h4>List types</h4>
-    <p>There are three types of lists in HTML:</p>
-    <ul>
-        <li>Unordered lists (Like this)</li>
-        <li>Ordered lists</li>
-        <li>Description lists</li>
-    </ul>
+        <h5>Ordered list</h5>
+        <ol>
+            <li>Wake up</li>
+            <li>Brush Teeth</li>
+            <li>Check mail</li>
+            <li>Do some work</li>
+            <li>Eat breakfast</li>
+        </ol>
 
-    <h5>Ordered list</h5>
-    <ol>
-        <li>Wake up</li>
-        <li>Brush Teeth</li>
-        <li>Check mail</li>
-        <li>Do some work</li>
-        <li>Eat breakfast</li>
-    </ol>
-
-    <pre>
+        <pre>
         <code>
     &ltol&gt
         &ltli&gtWake up&lt/li&gt
@@ -101,15 +107,15 @@
         </code>
     </pre>
 
-    <h5>Unordered list</h5>
-    <ul>
-        <li>Milk</li>
-        <li>Sugar</li>
-        <li>Bread</li>
-        <li>Toothpaste</li>
-    </ul>
+        <h5>Unordered list</h5>
+        <ul>
+            <li>Milk</li>
+            <li>Sugar</li>
+            <li>Bread</li>
+            <li>Toothpaste</li>
+        </ul>
 
-    <pre>
+        <pre>
         <code>
     &ltul&gt
         &ltli&gtMilk&lt/li&gt
@@ -120,15 +126,15 @@
         </code>
     </pre>
 
-    <h5>Description lists</h5>
-    <dl>
-        <dt>Coffee</dt>
-        <dd>- black hot drink</dd>
-        <dt>Milk</dt>
-        <dd>- white cold drink</dd>
-    </dl>
+        <h5>Description lists</h5>
+        <dl>
+            <dt>Coffee</dt>
+            <dd>- black hot drink</dd>
+            <dt>Milk</dt>
+            <dd>- white cold drink</dd>
+        </dl>
 
-    <pre>
+        <pre>
         <code>
     &ltdl&gt
         &ltdt&gtCoffee&lt/dt&gt
@@ -139,12 +145,13 @@
         </code>
     </pre>
 
-    <aside class="usefulLinks">
-        <h4>🔗 Useful Links:</h4>
-        <ul>
-            <li>
-                <a target="_blank" href="https://www.w3schools.com/html/html_lists.asp">HTML Lists</a>
-            </li>
-        </ul>
-    </aside>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li>
+                    <a target="_blank" href="https://www.w3schools.com/html/html_lists.asp">HTML Lists</a>
+                </li>
+            </ul>
+        </aside>
+    </section>
 </section>
