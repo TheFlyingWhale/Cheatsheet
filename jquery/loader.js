@@ -12,7 +12,7 @@ $(document).ready(() => {
 
 //Loades the HTML Article
 $(document).ready(function () {
-    $("#html").load('html/html.html');
+    $("#html").load('./html/html.html');
 });
 
 //Loades the CSS Article
