@@ -3,7 +3,7 @@
  */
 
 $(document).ready(() => {
-    $('nav').load('../nav.html');
+    $('nav').load('nav.html');
 });
 
 /**
@@ -12,7 +12,7 @@ $(document).ready(() => {
 
 //Loades the HTML Article
 $(document).ready(function () {
-    $("#html").load('./html/html.html');
+    $("#html").load('html/html.html');
 });
 
 //Loades the CSS Article
@@ -27,7 +27,7 @@ $(document).ready(function () {
 
 //Loades the Mocha-Testing Article
 $(document).ready(function () {
-    $("#testingMocha").load('../testing/testingMocha.html')
+    $("#testingMocha").load('testing/testingMocha.html')
 })
 
 //Loades the Design Article
@@ -52,16 +52,16 @@ $(document).ready(() => {
 
 //Loades the Jest Article
 $(document).ready(() => {
-    $('#jest').load('./testing/TestingJest.html')
+    $('#jest').load('testing/TestingJest.html')
 });
 
 //Loades the Enzyme Article
 $(document).ready(() => {
-    $('#testingEnzyme').load('./testing/TestingEnzyme.html');
+    $('#testingEnzyme').load('testing/TestingEnzyme.html');
 });
 
 //Loades the Selenium Article
 $(document).ready(() => {
-    $('#selenium').load('./testing/testingSelenium.html');
+    $('#selenium').load('testing/testingSelenium.html');
 });
 
