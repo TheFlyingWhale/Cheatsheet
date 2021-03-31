@@ -52,7 +52,7 @@ $(document).ready(() => {
 
 //Loades the Jest Article
 $(document).ready(() => {
-    $('#jest').load('testing/TestingJest.html')
+    $('#jest').load('testing/testingJest.html')
 });
 
 //Loades the Enzyme Article
