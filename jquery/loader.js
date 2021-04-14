@@ -65,3 +65,7 @@ $(document).ready(() => {
     $('#selenium').load('testing/testingSelenium.html');
 });
 
+$(document).ready(() => {
+    $('#cssinjs').load('cssInJs/cssInJs.html');
+});
+
