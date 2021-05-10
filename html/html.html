@@ -163,6 +163,7 @@
             <li>The <code>&lt;tr&gt;</code> element adds rows to a table.</li>
             <li>To add data to a row, you can use the <code>&lt;td&gt;</code> element.</li>
             <li>Table headings clarify the meaning of data. Headings are added with the <code>&lt;th&gt;</code> element.</li>
+            <li>Table headings can be assigned to rows and columns using the code <code>scope="row || head"</code> attribute.</li>
             <li>The data can span columns using the <code>colspan</code> attribute.</li>
             <li>Table data can span rows using the <code>rowspan</code> attribute.</li>
             <li>Tables can be split into three main sections: a head, a body, and a footer.</li>
@@ -170,6 +171,42 @@
             <li>A table's body is created with the <code>&lt;tbody&gt;</code> element.</li>
             <li>A table's footer is created with the <code>&lt;tfoot&gt;</code> element.</li>
         </ul>
+
+        <h4>Example table:</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ole</td>
+                    <td>25</td>
+                    <td>Eating ice-cream</td>
+                </tr>
+                <tr>
+                    <td>Per</td>
+                    <td>12</td>
+                    <td>Learning to code</td>
+                </tr>
+                <tr>
+                    <td>Gustav</td>
+                    <td>30</td>
+                    <td>Working</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total:</td>
+                    <td>67</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
         <aside class="usefulLinks">
             <h4>🔗 Useful Links:</h4>
             <ul>

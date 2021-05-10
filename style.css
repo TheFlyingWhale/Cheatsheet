@@ -262,3 +262,13 @@ ol ol {
     justify-content: center;
     border-radius: 15px;
 }
+
+table{
+    background-color: darkcyan;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+td{
+    border: 1px solid lightgray;
+}
