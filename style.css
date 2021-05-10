@@ -269,6 +269,6 @@ table{
     border-radius: 10px;
 }
 
-td{
+th,td{
     border: 1px solid lightgray;
 }
