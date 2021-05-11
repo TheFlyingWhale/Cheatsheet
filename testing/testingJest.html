@@ -2,12 +2,33 @@
     <h2 id="jest">Testing with Jest 🃏</h2>
     <section id="whatIsJest">
         <h3>What is Jest?</h3>
-        <p>Jest is a JavaScript test runner, that is, a JavaScript library for creating, running, and structuring tests</p>
-        <p>Jest ships as an NPM package, you can install it in any JavaScript project. Jest is one of the most popular test runners these days, and the default choice for React projects</p>
+        <p>
+            Jest is a JavaScript test runner, that is, a JavaScript library for
+            creating, running, and structuring tests
+        </p>
+        <p>
+            Jest ships as an NPM package, you can install it in any JavaScript
+            project. Jest is one of the most popular test runners these days,
+            and the default choice for React projects
+        </p>
 
-        <h4>Unit Testing</h4>
-        <p>Example:</p>
-        <pre>
+        <section>
+            <h3>Code coverage</h3>
+            <p>Code coverage lets you know how much of the code is being tested.</p>
+            <ul>
+                <li>
+                    <p>Flag <code>--coverage</code></p>
+                </li>
+                <li>
+                    <code>$ npm test -- --coverage</code>
+                </li>
+            </ul>
+        </section>
+
+        <section id="unitTesting">
+            <h3>Unit Testing</h3>
+            <p>Example:</p>
+            <pre>
             <code>
     function filterByTerm(inputArr, searchTerm) {
         return inputArr.filter(arrayElement => {
@@ -30,25 +51,40 @@
     });
             </code>
         </pre>
-        <ul>
-            <li>
-                <code>describe()</code> method for containing one or more related tests.
-            </li>
-            <li>
-                <code>test()</code> the actual test block.
-            </li>
-            <li>
-                <code>expect()</code> a matcher for checking if a function returns the expected result when called.
-            </li>
-            <li>
-                <code>toEqual()</code> connects the matcher with the expected result
-            </li>
-        </ul>
+            <ul>
+                <li>
+                    <code>describe()</code> method for containing one or more
+                    related tests.
+                </li>
+                <li><code>test()</code> the actual test block.</li>
+                <li>
+                    <code>expect()</code> a matcher for checking if a function
+                    returns the expected result when called.
+                </li>
+                <li>
+                    <code>toEqual()</code> connects the matcher with the
+                    expected result
+                </li>
+            </ul>
+        </section>
         <aside class="usefulLinks">
             <h4>🔗 Useful Links:</h4>
             <ul>
-                <li><a target="_blank" href="https://jestjs.io/docs/getting-started">Jest Documentation</a></li>
-                <li><a target="_blank" href="https://www.valentinog.com/blog/jest/">Jest Tutorial for Beginners: Getting started with javascript testing</a></li>
+                <li>
+                    <a
+                        target="_blank"
+                        href="https://jestjs.io/docs/getting-started"
+                        >Jest Documentation</a
+                    >
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        href="https://www.valentinog.com/blog/jest/"
+                        >Jest Tutorial for Beginners: Getting started with
+                        javascript testing</a
+                    >
+                </li>
             </ul>
         </aside>
     </section>
