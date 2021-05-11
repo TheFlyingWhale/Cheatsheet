@@ -2,11 +2,52 @@
     <h2 id="jest">Testing with Jest 🃏</h2>
     <section id="whatIsJest">
         <h3>What is Jest?</h3>
-        <p>CSS is what allows us to style the structure of HTML</p>
+        <p>Jest is a JavaScript test runner, that is, a JavaScript library for creating, running, and structuring tests</p>
+        <p>Jest ships as an NPM package, you can install it in any JavaScript project. Jest is one of the most popular test runners these days, and the default choice for React projects</p>
+
+        <h4>Unit Testing</h4>
+        <p>Example:</p>
+        <pre>
+            <code>
+    function filterByTerm(inputArr, searchTerm) {
+        return inputArr.filter(arrayElement => {
+            return arrayElement.url.match(searchTerm);
+        });
+    }
+
+    describe("Filter function", () => {
+        test("it should filter by a search term (link)", () => {
+            const input = [
+                { id: 1, url: "https://www.url1.dev" },
+                { id: 2, url: "https://www.url2.dev" },
+                { id: 3, url: "https://www.link3.dev" }
+            ];
+
+            const output = [{ id: 3, url: "https://www.link3.dev" }];
+
+            expect(filterByTerm(input, 'link')).toEqual(output);
+        });
+    });
+            </code>
+        </pre>
+        <ul>
+            <li>
+                <code>describe()</code> method for containing one or more related tests.
+            </li>
+            <li>
+                <code>test()</code> the actual test block.
+            </li>
+            <li>
+                <code>expect()</code> a matcher for checking if a function returns the expected result when called.
+            </li>
+            <li>
+                <code>toEqual()</code> connects the matcher with the expected result
+            </li>
+        </ul>
         <aside class="usefulLinks">
             <h4>🔗 Useful Links:</h4>
             <ul>
-                <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN CSS Documentation</a></li>
+                <li><a target="_blank" href="https://jestjs.io/docs/getting-started">Jest Documentation</a></li>
                 <li><a target="_blank" href="https://www.valentinog.com/blog/jest/">Jest Tutorial for Beginners: Getting started with javascript testing</a></li>
             </ul>
         </aside>
