@@ -136,7 +136,7 @@
     const store = createStore(reducer);
             </code>
         </pre>
-            <p>To phrase the data flow using theese terms:</p>
+            <p>To phrase the data flow using these terms:</p>
             <ol>
                 <li>The store initializes the state with a default value.</li>
                 <li>The view displays that state.</li>
@@ -200,14 +200,14 @@
     </section>
 
     <section id="reduxApi">
-        <h3>API Refrence</h3>
-        <p>Redux defines a set of contracts for you to implement (such as reducres) and provides a few helper functions
+        <h3>API Reference</h3>
+        <p>Redux defines a set of contracts for you to implement (such as reducers) and provides a few helper functions
             to tie these contracts together</p>
         <h4>Top-Level Exports</h4>
         <ul>
             <li>createStore(reducer, [preloadedState], [enhancer])</li>
-            <li>combineReducers(reducres)</li>
-            <li>applyMiddleware(...middlewares)</li>
+            <li>combineReducers(reducers)</li>
+            <li>applyMiddleware(...middleware)</li>
             <li>bindActionCreators(actionCreators, dispatch)</li>
             <li>compose(...functions)</li>
         </ul>
@@ -289,7 +289,7 @@
 
         <section id="store">
             <h3>store</h3>
-            <p>A store holds the whole state tree of your appliaction. The only way to change the state inside it is to
+            <p>A store holds the whole state tree of your application. The only way to change the state inside it is to
                 dispatch an action on it.</p>
             <p>A store is not a class. It's just an object with a few methods on it. To create it, pass your root
                 reducing function to <code>createStore</code></p>
@@ -314,8 +314,8 @@
                 The store's reducing function will be called with the current <code>getState()</code> result and the
                 given <code>action</code> synchronously.
                 <br>
-                Its return value will be considered the enxt state. It will be returned from <code>getState()</code>
-                from now on, and the change listeners will immediatly be notified.
+                Its return value will be considered the next state. It will be returned from <code>getState()</code>
+                from now on, and the change listeners will immediately be notified.
             </p>
             <h6>Example</h6>
             <pre>
@@ -389,7 +389,7 @@
     <section id="reactRedux">
         <h3>React Redux</h3>
         <p>React Redux is the official React binding for Redux. It lets your React components read data from a Redux
-            store, and sipatch action to the store to update data.</p>
+            store, and dispatch action to the store to update data.</p>
         <h4>Installation</h4>
         <pre>
         <code>
@@ -512,5 +512,20 @@
             <p><code>configureStore</code> accepts a single configuration object parameter, with the following options:
             </p>
         </section>
+    </section>
+
+    <section id="reduxTests">
+        <h3>Testing Redux</h3>
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li><a target="_blank" href="https://redux.js.org/recipes/writing-tests">Writing Tests in Redux</a></li>
+                <li><a target="_blank" href="https://hackernoon.com/redux-testing-step-by-step-a-simple-methodology-for-testing-business-logic-8901670756ce">Testing Redux for Real Life Apps</a></li>
+                <li><a target="_blank" href="https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/">Testing Strategies for React and Redux</a></li>
+                <li><a target="_blank" href="https://www.robinwieruch.de/react-connected-component-test">How to test React-Redux connected Components</a></li>
+                <li><a target="_blank" href="https://www.youtube.com/watch?v=h7ukDItVN_o">How to Test Redux with isolated unit tests</a></li>
+                <li><a target="_blank" href="https://willowtreeapps.com/ideas/best-practices-for-unit-testing-with-a-react-redux-approach">Best practices for unit testing with a React/Redux approach</a></li>
+            </ul>
+        </aside>
     </section>
 </section>

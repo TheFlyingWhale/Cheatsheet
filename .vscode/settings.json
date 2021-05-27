@@ -3,5 +3,12 @@
         "flexbox",
         "stackoverflow",
         "wcag"
+    ],
+    "cSpell.ignoreWords": [
+        "immutator",
+        "lunde",
+        "redux's",
+        "reduxjs",
+        "todos"
     ]
 }
