@@ -66,6 +66,11 @@ $(document).ready(() => {
 });
 
 $(document).ready(() => {
+    $('#node').load('node/node.html');
+});
+
+//Is this even being used? I dont think so?
+$(document).ready(() => {
     $('#cssinjs').load('cssInJs/cssInJs.html');
 });
 

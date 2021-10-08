@@ -10,5 +10,6 @@
         "redux's",
         "reduxjs",
         "todos"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
