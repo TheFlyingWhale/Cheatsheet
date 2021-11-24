@@ -1,0 +1,54 @@
+<h2>Databases 💿</h2>
+<section id="whatIsADatabase">
+    <h3>What is a Database?</h3>
+    <p>In computing, a database is an organized collection of data stored and accessed electronically from a computer system. Where databases are more complex they are often developed using formal design and modeling techniques.</p>
+</section>
+
+<section id="constraints">
+    <h3>PostgreSQL Constraints</h3>
+
+    <h4>Specifically, Constraints</h4>
+
+    <ul>
+        <li>Reject rows containing values that shouldn't be inserted into a database table, which can help with preserving data integrity and quality</li>
+        <li>Raise an error when they're violated, which can also help with debugging applications that write to the database.</li>
+    </ul>
+
+    <p>There are quite a few types of constraints:</p>
+
+    <ul>
+        <li>Data types - Are your first line of defense, these rules aren't constraints but can help reject incorrect data from your database</li>
+        <li><code>NOT NULL</code> constraints - Reject incoming rows from your table when critical information is missing from a row.</li>
+        <li><code>CHECK</code> constraints - Give you more control over what rules you'd like to apply to your tables. These constraints will allow you to reject a row if it fails the criteria you've defined</li>
+        <li><code>PRIMARY KEY</code> constraints - A column or combination of columns that uniquely identify a row and are both <code>NOT NULL</code> and <code>UNIQUE</code>. <code>PRIMARY KEY</code>s are unique to a table, and will often be used in joins between tables</li>
+        <li><code>FOREIGN KEY</code> constraints - Allow you to maintain <i>referential integrity</i> between two tables by validating the entry in one also appears in the other. Referential integrity depends on <code>FOREIGN KEY</code> constraints</li>
+    </ul>
+
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://jnd.org/signifiers_not_affordances/">Signifiers, not affordances</a>
+            </li>
+            <li>
+                <a target="_blank" href="http://ui-patterns.com/">UI Patterns</a>
+            </li>
+        </ul>
+    </aside>
+</section>
+
+<section id="designResponsive">
+    <h3>Responsive design</h3>
+    <p>Resonsive design is all about creating a design that adjust to different sizes.</p>
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/">Responsive Web Design - What It Is And How To Use It</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.taniarascia.com/you-dont-need-a-framework/">Understanding the Fundamentals of Responsive Design</a>
+            </li>
+        </ul>
+    </aside>
+</section>

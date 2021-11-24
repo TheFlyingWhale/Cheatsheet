@@ -74,3 +74,6 @@ $(document).ready(() => {
     $('#cssinjs').load('cssInJs/cssInJs.html');
 });
 
+$(document).ready(() => {
+    $('#db').load('db/db.html')
+});
