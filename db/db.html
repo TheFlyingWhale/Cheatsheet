@@ -158,6 +158,19 @@
     WHERE columnName = 'wantedRowDetail';
                 </code>
             </pre>
+
+            <h6>Check Table Size</h6>
+            <p>
+                To check a size of a table you can use the following query.
+                <br>
+                This is useful if you want to see the consequences of implementing indexes
+            </p>
+            <pre>
+                <code>
+    SELECT pg_size_pretty
+    (pg_total_relational_size('tableName'));
+                </code>
+            </pre>
         </section>
     </section>
 </section>
