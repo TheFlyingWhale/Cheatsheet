@@ -102,16 +102,6 @@
             <h5>What are indexes?</h5>
             <p>Indexing allows you to organize your database structure in such a way that it makes finding specific records much faster.</p>
 
-            <h6>See implemented indexes</h6>
-            <p>To see existing indexes of a table you can use this query:</p>
-            <pre>
-                <code>
-    SELECT *
-    FROM pg_Indexes
-    WHERE table_name = 'tableName';
-                </code>
-            </pre>
-
             <h6>Implement indexes</h6>
             <p>To implement indexes in an existing table you can use this query:</p>
             <pre>
@@ -133,6 +123,16 @@
                 <code>
     CREATE INDEX tableName_firstColumnName_secondColumnName_idx
     ON tableName (firstColumnName, secondColumnName);
+                </code>
+            </pre>
+
+            <h6>See implemented indexes</h6>
+            <p>To see existing indexes of a table you can use this query:</p>
+            <pre>
+                <code>
+    SELECT *
+    FROM pg_Indexes
+    WHERE table_name = 'tableName';
                 </code>
             </pre>
 
