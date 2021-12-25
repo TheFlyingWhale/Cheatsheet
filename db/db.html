@@ -98,9 +98,53 @@
         </aside>
 
         <section id="dbIndexes">
-            <h5>Indexes</h5>
-            <h6>What are indexes?</h6>
+            <h4>Indexes</h4>
+            <h5>What are indexes?</h5>
             <p>Indexing allows you to organize your database structure in such a way that it makes finding specific records much faster.</p>
+
+            <h6>See implemented indexes</h6>
+            <p>To see existing indexes of a table you can use this query:</p>
+            <pre>
+                <code>
+    SELECT *
+    FROM pg_Indexes
+    WHERE table_name = 'tableName';
+                </code>
+            </pre>
+
+            <h6>Implement indexes</h6>
+            <p>To implement indexes in an existing table you can use this query:</p>
+            <pre>
+                <code>
+    CREATE INDEX tableName_columnName_idx
+    ON tableName (columnName);
+                </code>
+            </pre>
+
+            <h6>Implement MultiColumn indexes</h6>
+            <p>
+                To implement multiColumn indexes you can use the following query
+                <br>
+                Keep in mind that the indexes is built in the specific order listed at creation
+                <br>
+                so (last_name, first_name) is different from (first_name, last_name)
+            </p>
+            <pre>
+                <code>
+    CREATE INDEX tableName_firstColumnName_secondColumnName_idx
+    ON tableName (firstColumnName, secondColumnName);
+                </code>
+            </pre>
+
+            <h6>Analyze query speed</h6>
+            <p>To get an insight into the expected time a query'll use you can use this query</p>
+            <pre>
+                <code>
+    EXPLAIN ANALYZE SELECT *
+    FROM tableName
+    WHERE columnName = 'wantedRowDetail';
+                </code>
+            </pre>
         </section>
     </section>
 </section>
