@@ -100,7 +100,8 @@
         <section id="dbIndexes">
             <h4>Indexes</h4>
             <h5>What are indexes?</h5>
-            <p>Indexing allows you to organize your database structure in such a way that it makes finding specific records much faster.</p>
+            <p><b>Pro:</b> Indexing allows you to organize your database structure in such a way that it makes finding specific records much faster.</p>
+            <p><b>Con:</b> Updating or inserting data where indexing is used is more costly since the DB must update its index structure.</p>
 
             <h6>Implement indexes</h6>
             <p>To implement indexes in an existing table you can use this query:</p>
@@ -123,6 +124,18 @@
                 <code>
     CREATE INDEX tableName_firstColumnName_secondColumnName_idx
     ON tableName (firstColumnName, secondColumnName);
+                </code>
+            </pre>
+
+            <h6>Remove implemented indexes</h6>
+            <p>
+                To remove an index you can use this query:
+                <br>
+                The whole name corresponds to the indexname column from pg_Indexes
+            </p>
+            <pre>
+                <code>
+    DROP INDEX IF EXISTS tableName_columnName_idx;
                 </code>
             </pre>
 
