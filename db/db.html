@@ -127,6 +127,17 @@
                 </code>
             </pre>
 
+            <h6>Implement Partial indexes</h6>
+            <p>Partial indexes are used to index certain rows that meet an criteria.</p>
+            <p>This is useful when working with large data sets and you're searching for a small part of those datasets regularly</p>
+            <pre>
+                <code>
+    CREATE INDEX tableName_criteriaName_idx
+    ON tableName (columnName)
+    WHERE columnName LIKE '%@wellsfargo.com';
+                </code>
+            </pre>
+
             <h6>Remove implemented indexes</h6>
             <p>
                 To remove an index you can use this query:
