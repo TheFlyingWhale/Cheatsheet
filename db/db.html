@@ -162,8 +162,8 @@
         <p>To implement indexes in an existing table you can use this query:</p>
         <pre>
             <code>
-CREATE INDEX tableName_columnName_idx
-ON tableName (columnName);
+    CREATE INDEX tableName_columnName_idx
+    ON tableName (columnName);
             </code>
         </pre>
 
@@ -177,8 +177,8 @@ ON tableName (columnName);
         </p>
         <pre>
             <code>
-CREATE INDEX tableName_firstColumnName_secondColumnName_idx
-ON tableName (firstColumnName, secondColumnName);
+    CREATE INDEX tableName_firstColumnName_secondColumnName_idx
+    ON tableName (firstColumnName, secondColumnName);
             </code>
         </pre>
 
@@ -187,9 +187,9 @@ ON tableName (firstColumnName, secondColumnName);
         <p>This is useful when working with large data sets and you're searching for a small part of those datasets regularly</p>
         <pre>
             <code>
-CREATE INDEX tableName_criteriaName_idx
-ON tableName (columnName)
-WHERE columnName LIKE '%@wellsfargo.com';
+    CREATE INDEX tableName_criteriaName_idx
+    ON tableName (columnName)
+    WHERE columnName LIKE '%@wellsfargo.com';
             </code>
         </pre>
 
@@ -197,15 +197,15 @@ WHERE columnName LIKE '%@wellsfargo.com';
         <p>If you're often querying a table and ordering it you can implement it with an index to make it faster</p>
         <pre>
             <code>
-CREATE INDEX tableName_columnName_ordered_idx
-ON tableName (orderColumnName DESC, secondColumnName);
+    CREATE INDEX tableName_columnName_ordered_idx
+    ON tableName (orderColumnName DESC, secondColumnName);
             </code>
         </pre>
         <p>If your table contains NULL values you can add that to the index as well:</p>
         <pre>
             <code>
-CREATE INDEX tableName_columnName_ordered_idx
-ON tableName (orderColumnName ASC NULLS FIRST, secondColumnName);
+    CREATE INDEX tableName_columnName_ordered_idx
+    ON tableName (orderColumnName ASC NULLS FIRST, secondColumnName);
             </code>
         </pre>
 
@@ -217,7 +217,7 @@ ON tableName (orderColumnName ASC NULLS FIRST, secondColumnName);
         </p>
         <pre>
             <code>
-DROP INDEX IF EXISTS tableName_columnName_idx;
+    DROP INDEX IF EXISTS tableName_columnName_idx;
             </code>
         </pre>
 
@@ -225,9 +225,9 @@ DROP INDEX IF EXISTS tableName_columnName_idx;
         <p>To see existing indexes of a table you can use this query:</p>
         <pre>
             <code>
-SELECT *
-FROM pg_indexes
-WHERE tablename = 'tableName';
+    SELECT *
+    FROM pg_indexes
+    WHERE tablename = 'tableName';
             </code>
         </pre>
 
@@ -235,9 +235,9 @@ WHERE tablename = 'tableName';
         <p>To get an insight into the expected time a query'll use you can use this query</p>
         <pre>
             <code>
-EXPLAIN ANALYZE SELECT *
-FROM tableName
-WHERE columnName = 'wantedRowDetail';
+    EXPLAIN ANALYZE SELECT *
+    FROM tableName
+    WHERE columnName = 'wantedRowDetail';
             </code>
         </pre>
 
@@ -249,8 +249,8 @@ WHERE columnName = 'wantedRowDetail';
         </p>
         <pre>
             <code>
-SELECT pg_size_pretty
-(pg_total_relation_size('tableName'));
+    SELECT pg_size_pretty
+    (pg_total_relation_size('tableName'));
             </code>
         </pre>
     </section>
@@ -276,8 +276,8 @@ SELECT pg_size_pretty
         <p>This means setting the index as the clustering index</p>
         <pre>
             <code>
-CLUSTER tableName 
-USING indexName;
+    CLUSTER tableName 
+    USING indexName;
             </code>
         </pre>
 
@@ -285,7 +285,7 @@ USING indexName;
         <p>If you have already established what index should be clustered on you can simply tell the system which table to apply the cluster on.</p>
         <pre>
             <code>
-CLUSTER tableName;
+    CLUSTER tableName;
             </code>
         </pre>
 
@@ -293,7 +293,7 @@ CLUSTER tableName;
         <p>And if you want to cluster every table in your database that has an identified index to use you can simply call</p>
         <pre>
             <code>
-CLUSTER;
+    CLUSTER;
             </code>
         </pre>
 
