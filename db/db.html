@@ -4,6 +4,39 @@
     <p>In computing, a database is an organized collection of data stored and accessed electronically from a computer system. Where databases are more complex they are often developed using formal design and modeling techniques.</p>
 </section>
 
+<section id="constraints">
+    <h3>PostgreSQL Constraints</h3>
+
+    <h4>Specifically, Constraints</h4>
+
+    <ul>
+        <li>Reject rows containing values that shouldn't be inserted into a database table, which can help with preserving data integrity and quality</li>
+        <li>Raise an error when they're violated, which can also help with debugging applications that write to the database.</li>
+    </ul>
+
+    <p>There are quite a few types of constraints:</p>
+
+    <ul>
+        <li>Data types - Are your first line of defense, these rules aren't constraints but can help reject incorrect data from your database</li>
+        <li><code>NOT NULL</code> constraints - Reject incoming rows from your table when critical information is missing from a row.</li>
+        <li><code>CHECK</code> constraints - Give you more control over what rules you'd like to apply to your tables. These constraints will allow you to reject a row if it fails the criteria you've defined</li>
+        <li><code>PRIMARY KEY</code> constraints - A column or combination of columns that uniquely identify a row and are both <code>NOT NULL</code> and <code>UNIQUE</code>. <code>PRIMARY KEY</code>s are unique to a table, and will often be used in joins between tables</li>
+        <li><code>FOREIGN KEY</code> constraints - Allow you to maintain <i>referential integrity</i> between two tables by validating the entry in one also appears in the other. Referential integrity depends on <code>FOREIGN KEY</code> constraints</li>
+    </ul>
+
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://jnd.org/signifiers_not_affordances/">Signifiers, not affordances</a>
+            </li>
+            <li>
+                <a target="_blank" href="http://ui-patterns.com/">UI Patterns</a>
+            </li>
+        </ul>
+    </aside>
+</section>
+
 <section id="designingRelationalDatabases">
     <h3>Designing relational databases</h3>
     <aside class="usefulLinks">
@@ -75,224 +108,194 @@
             </ul>
         </aside>
     </section>
-
-    <section id="advancedPostgresql">
-        <h4>Advanced Postgres</h4>
-        <p>This section contains information about ACID</p>
-        <aside class="usefulLinks">
-            <h4>🔗 Useful Links:</h4>
-            <ul>
-                <li>
-                    <a target="_blank" href="https://en.wikipedia.org/wiki/ACID">ACID Wiki</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.geeksforgeeks.org/acid-properties-in-dbms/">ACID properties in DBMS</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.lifewire.com/abandoning-acid-in-favor-of-base-1019674">Abandoning ACID in Favor of BASE in Database Engineering (NoSQL)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.coursera.org/lecture/introduction-to-nosql-databases/acid-vs-base-MsJUH">ACID(SQL) vs BASE(NoSQL)</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.craigkerstiens.com/2012/10/01/understanding-postgres-performance/">Understanding Postgres Performance</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.craigkerstiens.com/2013/01/10/more-on-postgres-performance/">More on Postgres Performance</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://marmelab.com/blog/2019/02/13/how-to-improve-postgres-performances.html">How To Improve Postgres Performance: Our Tips and Tricks</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://en.wikipedia.org/wiki/Database_tuning">Database Tuning Wiki</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.sisense.com/blog/8-ways-fine-tune-sql-queries-production-databases/">Supercharge Your SQL Queries for Production Databases</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://en.wikipedia.org/wiki/Benchmark_(computing)">Benchmark(computing) Wiki</a>
-                </li>
-            </ul>
-        </aside>
-
-        <section id="dbIndexes">
-            <h4>Indexes</h4>
-            <h5>What are indexes?</h5>
-            <p><b>Pro:</b> Indexing allows you to organize your database structure in such a way that it makes finding specific records much faster.</p>
-            <p><b>Con:</b> Updating or inserting data where indexing is used is more costly since the DB must update its index structure.</p>
-
-            <h6>Implement indexes</h6>
-            <p>To implement indexes in an existing table you can use this query:</p>
-            <pre>
-                <code>
-    CREATE INDEX tableName_columnName_idx
-    ON tableName (columnName);
-                </code>
-            </pre>
-
-            <h6>Implement MultiColumn indexes</h6>
-            <p>
-                To implement multiColumn indexes you can use the following query
-                <br>
-                Keep in mind that the indexes is built in the specific order listed at creation
-                <br>
-                so (last_name, first_name) is different from (first_name, last_name)
-            </p>
-            <pre>
-                <code>
-    CREATE INDEX tableName_firstColumnName_secondColumnName_idx
-    ON tableName (firstColumnName, secondColumnName);
-                </code>
-            </pre>
-
-            <h6>Implement Partial indexes</h6>
-            <p>Partial indexes are used to index certain rows that meet an criteria.</p>
-            <p>This is useful when working with large data sets and you're searching for a small part of those datasets regularly</p>
-            <pre>
-                <code>
-    CREATE INDEX tableName_criteriaName_idx
-    ON tableName (columnName)
-    WHERE columnName LIKE '%@wellsfargo.com';
-                </code>
-            </pre>
-
-            <h6>Implement Order By indexes</h6>
-            <p>If you're often querying a table and ordering it you can implement it with an index to make it faster</p>
-            <pre>
-                <code>
-    CREATE INDEX tableName_columnName_ordered_idx
-    ON tableName (orderColumnName DESC, secondColumnName);
-                </code>
-            </pre>
-            <p>If your table contains NULL values you can add that to the index as well:</p>
-            <pre>
-                <code>
-    CREATE INDEX tableName_columnName_ordered_idx
-    ON tableName (orderColumnName ASC NULLS FIRST, secondColumnName);
-                </code>
-            </pre>
-
-            <h6>Remove implemented indexes</h6>
-            <p>
-                To remove an index you can use this query:
-                <br>
-                The whole name corresponds to the indexname column from pg_indexes
-            </p>
-            <pre>
-                <code>
-    DROP INDEX IF EXISTS tableName_columnName_idx;
-                </code>
-            </pre>
-
-            <h6>See implemented indexes</h6>
-            <p>To see existing indexes of a table you can use this query:</p>
-            <pre>
-                <code>
-    SELECT *
-    FROM pg_indexes
-    WHERE tablename = 'tableName';
-                </code>
-            </pre>
-
-            <h6>Analyze query speed</h6>
-            <p>To get an insight into the expected time a query'll use you can use this query</p>
-            <pre>
-                <code>
-    EXPLAIN ANALYZE SELECT *
-    FROM tableName
-    WHERE columnName = 'wantedRowDetail';
-                </code>
-            </pre>
-
-            <h6>Check Table Size</h6>
-            <p>
-                To check a size of a table you can use the following query.
-                <br>
-                This is useful if you want to see the consequences of implementing indexes
-            </p>
-            <pre>
-                <code>
-    SELECT pg_size_pretty
-    (pg_total_relation_size('tableName'));
-                </code>
-            </pre>
-        </section>
-
-        <section id="dbCluster">
-            <h4>Clusters</h4>
-
-            <p><b>You can create many indexes on a table, but only one can be a clustered index</b></p>
-
-            <p>
-                When a database is optimized using and index it's been clustered. 
-                <br>
-                An cluster is a physical arrangement of the data in such a way that it becomes faster to query or request data.
-                <br>
-                PostgreSQL does not automatically re-cluster itself when we <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> data.
-                <br>
-                This means that after a while we'll need to re-cluster it ourselves.
-                <br>
-                Re-clustering can be done using these queries:
-            </p>
-
-            <h5>Set cluster index</h5>
-            <p>This means setting the index as the clustering index</p>
-            <pre>
-                <code>
-    CLUSTER tableName 
-    USING indexName;
-                </code>
-            </pre>
-
-            <h5>Cluster on established index</h5>
-            <p>If you have already established what index should be clustered on you can simply tell the system which table to apply the cluster on.</p>
-            <pre>
-                <code>
-    CLUSTER tableName;
-                </code>
-            </pre>
-
-            <h5>Cluster all tables</h5>
-            <p>And if you want to cluster every table in your database that has an identified index to use you can simply call</p>
-            <pre>
-                <code>
-    CLUSTER;
-                </code>
-            </pre>
-
-        </section>
-    </section>
 </section>
 
-<section id="constraints">
-    <h3>PostgreSQL Constraints</h3>
-
-    <h4>Specifically, Constraints</h4>
-
-    <ul>
-        <li>Reject rows containing values that shouldn't be inserted into a database table, which can help with preserving data integrity and quality</li>
-        <li>Raise an error when they're violated, which can also help with debugging applications that write to the database.</li>
-    </ul>
-
-    <p>There are quite a few types of constraints:</p>
-
-    <ul>
-        <li>Data types - Are your first line of defense, these rules aren't constraints but can help reject incorrect data from your database</li>
-        <li><code>NOT NULL</code> constraints - Reject incoming rows from your table when critical information is missing from a row.</li>
-        <li><code>CHECK</code> constraints - Give you more control over what rules you'd like to apply to your tables. These constraints will allow you to reject a row if it fails the criteria you've defined</li>
-        <li><code>PRIMARY KEY</code> constraints - A column or combination of columns that uniquely identify a row and are both <code>NOT NULL</code> and <code>UNIQUE</code>. <code>PRIMARY KEY</code>s are unique to a table, and will often be used in joins between tables</li>
-        <li><code>FOREIGN KEY</code> constraints - Allow you to maintain <i>referential integrity</i> between two tables by validating the entry in one also appears in the other. Referential integrity depends on <code>FOREIGN KEY</code> constraints</li>
-    </ul>
-
+<section id="advancedPostgresql">
+    <h3>Advanced Postgres</h3>
+    <p>This section contains advanced information about PostgreSQL</p>
     <aside class="usefulLinks">
         <h4>🔗 Useful Links:</h4>
         <ul>
             <li>
-                <a target="_blank" href="https://jnd.org/signifiers_not_affordances/">Signifiers, not affordances</a>
+                <a target="_blank" href="https://en.wikipedia.org/wiki/ACID">ACID Wiki</a>
             </li>
             <li>
-                <a target="_blank" href="http://ui-patterns.com/">UI Patterns</a>
+                <a target="_blank" href="https://www.geeksforgeeks.org/acid-properties-in-dbms/">ACID properties in DBMS</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.lifewire.com/abandoning-acid-in-favor-of-base-1019674">Abandoning ACID in Favor of BASE in Database Engineering (NoSQL)</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.coursera.org/lecture/introduction-to-nosql-databases/acid-vs-base-MsJUH">ACID(SQL) vs BASE(NoSQL)</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.craigkerstiens.com/2012/10/01/understanding-postgres-performance/">Understanding Postgres Performance</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.craigkerstiens.com/2013/01/10/more-on-postgres-performance/">More on Postgres Performance</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://marmelab.com/blog/2019/02/13/how-to-improve-postgres-performances.html">How To Improve Postgres Performance: Our Tips and Tricks</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Database_tuning">Database Tuning Wiki</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.sisense.com/blog/8-ways-fine-tune-sql-queries-production-databases/">Supercharge Your SQL Queries for Production Databases</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://en.wikipedia.org/wiki/Benchmark_(computing)">Benchmark(computing) Wiki</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://severalnines.com/blog/benchmarking-postgresql-performance">How to Benchmark PostgreSQL Performance</a>
             </li>
         </ul>
     </aside>
+
+    <section id="dbIndexes">
+        <h4>Indexes</h4>
+        <h5>What are indexes?</h5>
+        <p><b>Pro:</b> Indexing allows you to organize your database structure in such a way that it makes finding specific records much faster.</p>
+        <p><b>Con:</b> Updating or inserting data where indexing is used is more costly since the DB must update its index structure.</p>
+
+        <h6>Implement indexes</h6>
+        <p>To implement indexes in an existing table you can use this query:</p>
+        <pre>
+            <code>
+CREATE INDEX tableName_columnName_idx
+ON tableName (columnName);
+            </code>
+        </pre>
+
+        <h6>Implement MultiColumn indexes</h6>
+        <p>
+            To implement multiColumn indexes you can use the following query
+            <br>
+            Keep in mind that the indexes is built in the specific order listed at creation
+            <br>
+            so (last_name, first_name) is different from (first_name, last_name)
+        </p>
+        <pre>
+            <code>
+CREATE INDEX tableName_firstColumnName_secondColumnName_idx
+ON tableName (firstColumnName, secondColumnName);
+            </code>
+        </pre>
+
+        <h6>Implement Partial indexes</h6>
+        <p>Partial indexes are used to index certain rows that meet an criteria.</p>
+        <p>This is useful when working with large data sets and you're searching for a small part of those datasets regularly</p>
+        <pre>
+            <code>
+CREATE INDEX tableName_criteriaName_idx
+ON tableName (columnName)
+WHERE columnName LIKE '%@wellsfargo.com';
+            </code>
+        </pre>
+
+        <h6>Implement Order By indexes</h6>
+        <p>If you're often querying a table and ordering it you can implement it with an index to make it faster</p>
+        <pre>
+            <code>
+CREATE INDEX tableName_columnName_ordered_idx
+ON tableName (orderColumnName DESC, secondColumnName);
+            </code>
+        </pre>
+        <p>If your table contains NULL values you can add that to the index as well:</p>
+        <pre>
+            <code>
+CREATE INDEX tableName_columnName_ordered_idx
+ON tableName (orderColumnName ASC NULLS FIRST, secondColumnName);
+            </code>
+        </pre>
+
+        <h6>Remove implemented indexes</h6>
+        <p>
+            To remove an index you can use this query:
+            <br>
+            The whole name corresponds to the indexname column from pg_indexes
+        </p>
+        <pre>
+            <code>
+DROP INDEX IF EXISTS tableName_columnName_idx;
+            </code>
+        </pre>
+
+        <h6>See implemented indexes</h6>
+        <p>To see existing indexes of a table you can use this query:</p>
+        <pre>
+            <code>
+SELECT *
+FROM pg_indexes
+WHERE tablename = 'tableName';
+            </code>
+        </pre>
+
+        <h6>Analyze query speed</h6>
+        <p>To get an insight into the expected time a query'll use you can use this query</p>
+        <pre>
+            <code>
+EXPLAIN ANALYZE SELECT *
+FROM tableName
+WHERE columnName = 'wantedRowDetail';
+            </code>
+        </pre>
+
+        <h6>Check Table Size</h6>
+        <p>
+            To check a size of a table you can use the following query.
+            <br>
+            This is useful if you want to see the consequences of implementing indexes
+        </p>
+        <pre>
+            <code>
+SELECT pg_size_pretty
+(pg_total_relation_size('tableName'));
+            </code>
+        </pre>
+    </section>
+
+    <section id="dbCluster">
+        <h4>Clusters</h4>
+
+        <p><b>You can create many indexes on a table, but only one can be a clustered index</b></p>
+
+        <p>
+            When a database is optimized using and index it's been clustered. 
+            <br>
+            An cluster is a physical arrangement of the data in such a way that it becomes faster to query or request data.
+            <br>
+            PostgreSQL does not automatically re-cluster itself when we <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> data.
+            <br>
+            This means that after a while we'll need to re-cluster it ourselves.
+            <br>
+            Re-clustering can be done using these queries:
+        </p>
+
+        <h5>Set cluster index</h5>
+        <p>This means setting the index as the clustering index</p>
+        <pre>
+            <code>
+CLUSTER tableName 
+USING indexName;
+            </code>
+        </pre>
+
+        <h5>Cluster on established index</h5>
+        <p>If you have already established what index should be clustered on you can simply tell the system which table to apply the cluster on.</p>
+        <pre>
+            <code>
+CLUSTER tableName;
+            </code>
+        </pre>
+
+        <h5>Cluster all tables</h5>
+        <p>And if you want to cluster every table in your database that has an identified index to use you can simply call</p>
+        <pre>
+            <code>
+CLUSTER;
+            </code>
+        </pre>
+
+    </section>
 </section>
