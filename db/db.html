@@ -94,6 +94,21 @@
                 <li>
                     <a target="_blank" href="https://www.coursera.org/lecture/introduction-to-nosql-databases/acid-vs-base-MsJUH">ACID(SQL) vs BASE(NoSQL)</a>
                 </li>
+                <li>
+                    <a target="_blank" href="https://www.craigkerstiens.com/2012/10/01/understanding-postgres-performance/">Understanding Postgres Performance</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.craigkerstiens.com/2013/01/10/more-on-postgres-performance/">More on Postgres Performance</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://marmelab.com/blog/2019/02/13/how-to-improve-postgres-performances.html">How To Improve Postgres Performance: Our Tips and Tricks</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://en.wikipedia.org/wiki/Database_tuning">Database Tuning Wiki</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.sisense.com/blog/8-ways-fine-tune-sql-queries-production-databases/">Supercharge Your SQL Queries for Production Databases</a>
+                </li>
             </ul>
         </aside>
 
@@ -135,6 +150,22 @@
     CREATE INDEX tableName_criteriaName_idx
     ON tableName (columnName)
     WHERE columnName LIKE '%@wellsfargo.com';
+                </code>
+            </pre>
+
+            <h6>Implement Order By indexes</h6>
+            <p>If you're often querying a table and ordering it you can implement it with an index to make it faster</p>
+            <pre>
+                <code>
+    CREATE INDEX tableName_columnName_ordered_idx
+    ON tableName (orderColumnName DESC, secondColumnName);
+                </code>
+            </pre>
+            <p>If your table contains NULL values you can add that to the index as well:</p>
+            <pre>
+                <code>
+    CREATE INDEX tableName_columnName_ordered_idx
+    ON tableName (orderColumnName ASC NULLS FIRST, secondColumnName);
                 </code>
             </pre>
 
@@ -182,6 +213,50 @@
     (pg_total_relation_size('tableName'));
                 </code>
             </pre>
+        </section>
+
+        <section id="dbCluster">
+            <h4>Clusters</h4>
+
+            <p><b>You can create many indexes on a table, but only one can be a clustered index</b></p>
+
+            <p>
+                When a database is optimized using and index it's been clustered. 
+                <br>
+                An cluster is a physical arrangement of the data in such a way that it becomes faster to query or request data.
+                <br>
+                PostgreSQL does not automatically re-cluster itself when we <code>INSERT</code>, <code>UPDATE</code> or <code>DELETE</code> data.
+                <br>
+                This means that after a while we'll need to re-cluster it ourselves.
+                <br>
+                Re-clustering can be done using these queries:
+            </p>
+
+            <h5>Set cluster index</h5>
+            <p>This means setting the index as the clustering index</p>
+            <pre>
+                <code>
+    CLUSTER tableName 
+    USING indexName;
+                </code>
+            </pre>
+
+            <h5>Cluster on established index</h5>
+            <p>If you have already established what index should be clustered on you can simply tell the system which table to apply the cluster on.</p>
+            <pre>
+                <code>
+    CLUSTER tableName;
+                </code>
+            </pre>
+
+            <h5>Cluster all tables</h5>
+            <p>And if you want to cluster every table in your database that has an identified index to use you can simply call</p>
+            <pre>
+                <code>
+    CLUSTER;
+                </code>
+            </pre>
+
         </section>
     </section>
 </section>
