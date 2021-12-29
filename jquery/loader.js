@@ -75,5 +75,9 @@ $(document).ready(() => {
 });
 
 $(document).ready(() => {
-    $('#db').load('db/db.html')
+    $('#db').load('db/db.html');
+});
+
+$(document).ready(() => {
+    $('#connectingFrontendToBackend').load('fronteToBacke/fronteToBacke.html');
 });
