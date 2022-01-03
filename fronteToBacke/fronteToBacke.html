@@ -48,3 +48,237 @@
         </ul>
     </aside>
 </section>
+
+<section id="htsya">
+    <h3>How to Structure Your App</h3>
+    
+    <section>
+        <h4>MVC: Model, View, Controller</h4>
+        <p>MVC is a way to organize your code’s core functions into their own, neatly organized boxes. This makes thinking about your app, revisiting your app, and sharing your app with others much easier and cleaner.</p>
+
+        <p>
+            <b>Model:</b>
+            Model code typically reflects real-world things. This code can hold raw data, or it will define the essential components of your app. For instance, if you were building a To-do app, the model code would define what a “task” is and what a “list” is – since those are the main components of a todo app.
+        </p>
+
+        <p>
+            <b>View:</b>
+            View code is made up of all the functions that directly interact with the user. This is the code that makes your app look nice, and otherwise defines how your user sees and interacts with it.
+        </p>
+
+        <p>
+            <b>Controller:</b>
+            Controller code acts as a liaison between the Model and the View, receiving user input and deciding what to do with it. It’s the brains of the application, and ties together the model and the view.
+        </p>
+
+        <h4>An analogy</h4>
+        <p>
+            MVC is a way to think about how an web application works.
+            <br><br>
+            It’s kind of like how you make Thanksgiving dinner. You have a fridge full of food, which is like the Model. The fridge (Model) contains the raw materials we will use to make dinner.
+            <br><br>
+            You also probably have a recipe or two. A recipe (assuming you follow it exactly) is like the Controller of Thanksgiving dinner. Recipes dictate which stuff in the fridge you’ll take out, how you’ll put it together, and how long you need to cook it.
+            <br><br>
+            Then, you have table-settings, silverware, etc., which are what your hungry friends and family use to eat dinner. Table-top items are like the View. They let your guests interact with your Model and Controller’s creation.
+        </p>
+
+        <h4>MVC in the real-world</h4>
+        <p>
+            MVC is helpful when planning your app, because it gives you an outline of how your ideas should be organized into actual code.
+            <br><br>
+            For instance, let’s imagine you’re creating a To-do list app. This app will let users create tasks and organize them into lists.
+            <br><br>
+            The Model in a todo app might define what a “task” is and that a “list” is a collection of tasks.
+            <br><br>
+            The View code will define what the todos and lists looks like, visually. The tasks could have large font, or be a certain color.
+            <br><br>
+            Finally, the Controller could define how a user adds a task or marks another as complete. The Controller connects the View’s add button to the Model, so that when you click “add task,” the Model adds a new task.
+        </p>
+
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li>
+                    <a target="_blank" href="https://www.educative.io/blog/mvc-tutorial">MVC Architecture in 5 minutes: a tutorial for beginners</a>
+                </li>
+            </ul>
+        </aside>
+    </section>
+
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://softwareontheroad.com/ideal-nodejs-project-structure/">Bulletproof node.js project architecture</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://expressjs.com/en/starter/generator.html">Express Application Generator</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://reactjs.org/docs/faq-structure.html">React File Structure</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.robinwieruch.de/react-folder-structure/">React Folder Structure in 5 Steps</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://reactjs.org/docs/create-a-new-react-app.html">Create a New React App</a>
+            </li>
+        </ul>
+    </aside>
+
+</section>
+
+<section id="ssactea">
+    <h3>Server-Side API Calls to External APIs</h3>
+
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://www.thepolyglotdeveloper.com/2017/10/consume-remote-api-data-nodejs-application/">Consume Remote API Data From Within A Node.js Application</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://rapidapi.com/blog/how-to-use-an-api-with-node-js/">How to use an API with Node.js</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://dzone.com/articles/should-your-browser-make-client-side-web-api-calls">Should Your Browser Make Client-Side Web API Calls?</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://gomakethings.com/keeping-credentials-secure-when-making-api-calls-with-javascript/">Keeping credentials secure when making API calls with JavaScript</a>
+            </li>
+        </ul>
+    </aside>
+</section>
+
+<section id="tscdm">
+    <h3>The Server Can do More:</h3>
+    <p>Server-Side Use Cases</p>
+
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://www.proxyrack.com/create-your-own-node-js-http-proxy-server-in-under-10-minutes/">Build a Node.js HTTP Proxy Server in Under 10 minutes</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://stackabuse.com/how-to-send-emails-with-node-js/">How to Send Emails with Node.js</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://medium.com/@BearerSH/consuming-webhooks-with-node-js-and-express-50e007fc7ae2">Consuming Webhooks with Node.js and Express</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.digitalocean.com/community/tutorials/nodejs-cron-jobs-by-examples">How To Use node-cron to Run Scheduled Jobs in Node.js</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.digitalocean.com/community/tutorials/nodejs-intro-stripe-payments">Introduction to Stripe Payments in Node.js Using Express</a>
+            </li>
+        </ul>
+        <br>
+        <h4>Links I've not checked out:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://www.toptal.com/front-end/client-side-vs-server-side-pre-rendering">Client-side vs. Server-side vs. Pre-rendering for Web Apps</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web">Rendering on the Web</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.freecodecamp.org/news/what-exactly-is-client-side-rendering-and-hows-it-different-from-server-side-rendering-bd5c786b340d/">Client-side vs. Server-side rendering: why it's not all black and white</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.youtube.com/watch?v=Y2spCNZDt84&ab_channel=FullstackAcademy">[Video] Tech Talk: Client Side vs. Server Side Rendering</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://medium.com/@muthuks/universal-rendering-with-react-60a7ca86820">Universal rendering with React</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.youtube.com/watch?v=wPQ1-33teR4">React Tutorial: Build an e-commerce site from scratch using React and Netlify</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://dev.to/basir/react-node-tutorial-full-ecommerce-in-5-hours-2020-1hha">React & Node Tutorial - Full ECommerce in 5 Hours</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.youtube.com/watch?v=mI_-1tbIXQI&ab_channel=WebDevSimplified">How To Setup Payments With Node.js And Stripe [Web Dev Simplified]</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://dzone.com/articles/create-a-simple-shopping-cart-using-react-and-node">Create a Simple Shopping Cart Using React and Node</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.youtube.com/watch?v=NRLhlTopFzw&ab_channel=Optimizely">Implementing A/B Tests in React</a>
+            </li>
+        </ul>
+    </aside>
+</section>
+
+<section id="addPostgreSQL">
+    <h3>Adding PostgreSQL</h3>
+    <aside class="usefulLinks">
+        <h4>🔗 Useful Links:</h4>
+        <ul>
+            <li>
+                <a target="_blank" href="https://blog.logrocket.com/nodejs-expressjs-postgresql-crud-rest-api-example/">Node.js, Express.js, and PostgreSQL: CRUD REST API example</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.freecodecamp.org/news/fullstack-react-blog-app-with-express-and-psql/">Full Stack React: How to Build Your Own Blog Using Express, Hooks, & Postgres</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://node-postgres.com/">node-postgres Documentation</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://node-postgres.com/guides/project-structure">node-postgres Suggested Project Structure</a>
+            </li>
+        </ul>
+    </aside>
+
+    <section>
+        <h4>PostgreSQL command prompt</h4>
+        <p><code>psql</code> is the PosgreSQL interactive terminal.</p>
+        <p>Running <code>psql</code> will connect you to a PosgreSQL host.</p>
+        <p>Running <code>psql --help</code> will give you more information about the available options for connecting with <code>psql</code>.</p>
+        <ul>
+            <li><code>--h</code> --- <code>--host=HOSTNAME</code> | database server host or socket direction(default: "local socket")</li>
+            <li><code>--p</code> --- <code>--port=PORT</code> | database server port (default: "5432")</li>
+            <li><code>--U</code> --- <code>--username=USERNAME</code> | database username (default: "your_username")</li>
+            <li><code>--w</code> --- <code>--no-password</code> | never prompt for password</li>
+            <li><code>--W</code> --- <code>--password</code> force password prompt (should happen automatically)</li>
+        </ul>
+        <p><b>Connecting to the default <code>postgres</code> database with the default login information - no option flags:</b></p>
+        <pre>
+            <code>
+    psql postgres
+            </code>
+        </pre>
+        <p>Once inside the terminal you can run commands starting with a backslash <code>\</code></p>
+        <p>When running queries inside the terminal <code>CREATE ROLE me WITH LOGIN PASSWORD 'password';</code> remember to finish the query a semicolon <code>;</code></p>
+
+        <ul>
+            <li>
+                <code>\conninfo</code> | Shows information regarding current connection
+            </li>
+            <li>
+                <code>\q</code> | Exit <code>psql</code> connection
+            </li>
+            <li>
+                <code>\c</code> | Connect to a new database
+            </li>
+            <li>
+                <code>\dt</code> | List all tables
+            </li>
+            <li>
+                <code>\du</code> | List all roles
+            </li>
+            <li>
+                <code>\list</code> | List all databases
+            </li>
+        </ul>
+
+        <aside class="usefulLinks">
+            <h4>🔗 Useful Links:</h4>
+            <ul>
+                <li>
+                    <a target="_blank" href="https://www.postgresql.org/docs/13/app-psql.html">psql - PosgreSQL interactive terminal [documentation]</a>
+                </li>
+            </ul>
+        </aside>
+    </section>
+</section>
